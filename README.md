@@ -24,16 +24,12 @@ Finally, it is required to create a bot account on a XMPP server. Just the same,
 Using a dedicated user (do not run as root!), start by creating a Python virtual environment to run this project, pull the git repository and install required python libraries.
 
 Example commands on Ubuntu:
+
 > $ python3 -m venv bridge_env
-
 > $ source bridge_env/bin/activate
-
 > $ git pull https://github.com/Barbapulpe/xmpp-ap-bridge
-
 > $ cd xmpp-ap-bridge
-
 > $ pip install -r requirements.txt
-
 > $ deactivate
 
 ### Mastodon bot
@@ -100,13 +96,13 @@ Any changes made to the configuration file needs restarting the backend for both
 Once all is configured, you are ready to start the backend so the two bots start listening to events and dealing with messages.
 
 If using a linux distribution based on systemd, you can copy the two files provided in the `dist/` directory to `/etc/systemd/system/` (on Ubuntu), edit them to adapt to your own system (linux user and paths), and start both services as root:
-> \# systemctl enable --now ap-bridge
 
+> \# systemctl enable --now ap-bridge
 > \# systemctl enable --now xmpp-bridge
 
 You can check all went well using:
-> \# journalctl -u ap-bridge
 
+> \# journalctl -u ap-bridge
 > \# journalctl -u xmpp-bridge
 
 On the first run, the Bridge will create and initialize all required files and database tables. On subsequent runs, cleanup is performed on each startup: you should consider a regular restart of the backend bots.
