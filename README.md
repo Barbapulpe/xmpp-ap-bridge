@@ -1,5 +1,7 @@
-# XMPP/AP Bridge
+# XMPP/ActivityPub Bridge
 # Chat between XMPP and the Fediverse
+
+![banner-fedi2xmpp](https://github.com/user-attachments/assets/664e972c-e2f8-4e03-8e02-07156fc023e9)
 
 ## About
 
@@ -9,8 +11,6 @@ This project is a lightweight implementation based on client bots to enable chat
 
 From a user standpoint: nothing to install, nothing to configure, just communicate with the bots and they will take care of sending your messages to the other world.
 
----
-
 ## Requirements
 
 A server running Python version 3.10 is required for the backend (specific syntax in the code is not compatible with lower versions).
@@ -18,8 +18,6 @@ A server running Python version 3.10 is required for the backend (specific synta
 It is also required to create a bot account on a Mastodon server (or another Fediverse server if it use Mastodon-compatible API's, untested). This server can be any server but you need to check that it allows for bot accounts.
 
 Finally, it is required to create a bot account on a XMPP server. Just the same, this server can be any server but you need to check that it allows for bot accounts.
-
----
 
 ## Installation
 
@@ -66,8 +64,6 @@ Make a note of this **Access token**, you will require it to configre the backen
 You also need to create a bot account on a XMPP server. Apply to register an account, making sure bot accounts are allowed by the server moderation, using a very long and complex password.
 
 Update the profile to your liking, and make a note of this password, you will require it to configre the backend just after.
-
----
 
 ## Configuration
 
@@ -116,8 +112,6 @@ You can check all went well using:
 
 On the first run, the Bridge will create and initialize all required files and database tables. On subsequent runs, cleanup is performed on each startup: you should consider a regular restart of the backend bots.
 
----
-
 ## Deployment
 
 ### Design advantages and limitations
@@ -143,8 +137,6 @@ So again, introducing a bridge means inserting a person-in-the-middle able to in
 
 The most privacy-friendly scenario would be: you are running a Mastodon server and a XMPP server, with the Bridge backend also running on one of those two servers and each bot registered on those two servers. That way, you would not increase your privacy exposure for anyone using the Bridge from one of those two servers.
 
----
-
 ## Administration and moderation
 
 In the configuration file, you can assign so-called administrators for the Bridge, who act as global moderators: blocking of accounts, management of greenlists and redlists of domains. These administrator accounts can be existing standard users on Fediverse / XMPP and should be separate from the bot accounts, the latter should not be used interactively.
@@ -155,13 +147,9 @@ Please note that domain lists are stored in files rather than database: this is 
 
 Moderation and protection against abuse is an important feature of this Bridge. Moreover, configuration offers many different scenarios, such as a Bridge open to all to one only open to a limited or local community.
 
----
-
 ## User guides
 
 User guides are available in each supported language and referred to in the bot help command, the English version is available [here](https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-from-xmpp-to-fediverse-user-help-page-59dlkf)
-
----
 
 ## License
 
