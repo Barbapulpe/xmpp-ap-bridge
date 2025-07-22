@@ -1,0 +1,193 @@
+
+### Configuration file for XMPP/AP Bridge ###
+
+# It is located at the full path and name defined by the environment variable: XMPP_BRIDGE_CONFIG_FILE
+# If not set, default location will be: /usr/local/etc/xmpp-bridge-config.yml
+
+# Make sure the user executing the bridge has read access to this file
+
+---
+
+### Domains, accounts and credentials which must be completed
+
+# Domain names of the Fediverse and XMPP servers hosting the bot accounts
+# Mandatory and each is a unique entry
+ap_instance: example.social
+xmpp_instance: example.im
+
+# List of accounts having admin rights to execute special commands on the bridge
+#   ap_admin is for Fediverse, recommended but optionnal
+#   xmpp_admin is for XMPP, at least one account is mandatory for receiving user reports
+# Can be defined even before the corresponding users are registered on the bridge
+# Can be on any servers and as many as you want, but be mindful of the consequences
+# A bridge admin can start/stop the sending of messages, open/close registrations and manage global blocks
+# A bridge admin cannot view messages contents and metadata if he does not control the bot accounts
+ap_admin:
+- fediaccount@example.com
+
+xmpp_admin:
+- xmppjid@example.net
+
+# Credentials of the bot account on XMPP server (full JID must be used)
+# Can be empty and set in environment variables AP_BRIDGE_JID and AP_BRIDGE_PASS
+# Mandatory, if you use this file make sure it is kept secret to owner with permissions 600
+ap_bridge_jid: ap_bridge@example.im
+ap_bridge_pass: YourSecretPasswordHere
+
+# Name and token of the bot account on Fediverse server (appropriate access rights must be granted on server account)
+# The token can be empty and set in environment variable XMPP_BRIDGE_NAME and XMPP_BRIDGE_TOKEN
+# Mandatory, if you use this file make sure it is kept secret to owner with permissions 600
+xmpp_bridge_name: xmpp_bridge@example.social
+xmpp_bridge_token: YourSecretTokenHere
+
+
+### Logs, paths and filenames
+
+# Full path / filename for the log file, read/write access necessary. Or can be left empty, in which case no logging is done
+# If used, you must manage its rotation (not very chatty)
+bridge-log-file: "/path/to/logfile/xmpp-bridge.log"
+
+# Full path / filename for the database file, read/write access necessary. Mandatory, will be created on init if non-existent
+bridge-database-file: "/path/to/dbfile/bridge.db"
+
+# Directory where the two files listing domains red listed and green listed are stored, read/write access necessary
+# Filenames: xmpp-bridge-red.txt and xmpp-bridge-green.txt
+# Files are used rather than database to allow for easy editing and/or importing
+# A file xmpp-bridge-start.txt is also used to record the status of the bridge (send messages allowed or not)
+# A file xmpp-bridge-open.txt is also used to record bridge registration status (registrations opened or not)
+# All these files will be created on init if non-existent
+bridge-files-dir: "/path/to/bridgefiles"
+
+# Directory where the text files for the translations are stored, read access is necessary
+# There is a master key file bridge-messages-keys.txt which comes with the source code and must be stored there unmodified
+# Next there is a set of files named xx.txt where xx is the country code two-letter ISO 3166-1 alpha-2
+# These files are provided with the source code, they can be edited (text can be changed, but keep the order of the lines)
+# Additional translations can be generated, you must respect the number of curly braces {} which are mandatory placeholders
+translation-dir: "/path/to/translationfiles/bridge-messages-translations"
+
+
+### Set of functional parameters for the bridge which can be adapted to your liking
+
+# Flag to decide on policy for domains: if set to True, only registration from green listed (and bot) domains will be possible
+# If set to False, red listed domains/accounts will be rejected, green listed domains will simply skip activity verification
+# BEWARE OF CHANGING THIS SETTING: on init, cleanup depends on it (if True, non-greenlisted domain accounts will be unregistered)
+greenlist-mode: False
+
+# Minimum number of posts expected from an account applying for registration from Fediverse (to avoid spam and junk accounts)
+# green listed domains skip this check, or you can set to 0 to disable
+min-ap-activity-posts: 5
+
+# Maximum number of times the same account can register (again, to avoid abuse)
+max-ap-registrations: 8
+
+# Maximum number of recipients to whom a user can send one message (to avoid spamming)
+max-dest-to-send: 4
+
+# Flag to decide on policy if sender is blocked: does he receive a notice or is the message silently ignored?
+# True / False, provided to avoid harassment if a user is blocked by a recipient
+silent-block: True
+
+# Flag to decide on policy when a message is sent: receive confirmation, or not
+# True / False, provided to avoid too much verbose and allow for chat-like conversations
+silent-send: True
+
+# How long do we wait (in minutes) until we require again to name the intended recipient from XMPP sender
+# Replying or sending again a message to the same recipient can be done from XMPP without naming again the recipient
+# This simulates as close as possible a "real" conversation
+# However, we time this out to avoid confusion or sending to an unintended recipient (forgetting a conversation was initiated)
+max-minutes-for-reply: 90
+
+# On bridge initialization, retention period (in days) before we delete all information from database from revoked accounts
+max-retention-days-revoked-user: 30
+
+# On bridge initialization, retention period (in days) before we delete communication metadata between accounts
+# It is recommended to align the Mastodon bot settings for autodelete of messages to the same period
+comm-max-limit-days: 30
+
+# Default language (used initially, by default) and language when unknown code is requested
+# The code is the two-letter ISO 3166-1 alpha-2 and files must exist in the languages directory text files (see above)
+bridge-default-language: fr
+bridge-unknown-language: en
+
+
+### Bridge global settings, could be changed but probably best to leave as configured by default
+
+# Prefixes used for bridge syntax, respectively:
+#   Fediverse prefix of accounts
+#   XMPP prefix for accounts,
+#   Prefix for commands
+#   Special prefix for language setting
+# Can be changed, it will affect user experience, take care about regex in source code parsing function
+bridge-prefixes:
+- "@"
+- "xmpp:"
+- "!"
+- "!lang="
+
+# List of commands accepted by the bridge
+# All names can be changed but order is important and should be kept!
+# To add new commands, source code modification and indexing of commands should be thoroughly reviewed
+bridge-command-list:
+- register
+- unregister
+- report
+- help
+- block
+- unblock
+- listblock
+- start
+- stop
+- alistu
+- alistb
+- ablock
+- aunblock
+- ahelp
+- addred
+- addgreen
+- delred
+- delgreen
+- listred
+- listgreen
+- open
+- close
+- status
+
+# Name of the user agent for querying the Fediverse instance hosting the bot
+# It is good practice to identify as a bot, and mandatory to check your instance rules are fine with that
+user-agent: "XMPP/AP Bridge Bot"
+
+# Maximum default length for posts from Mastodon - fallback value, as it will be automatically queried
+max-char-per-post: 500
+
+
+### URL's for help messages
+
+# Set of URL's for the help instructions, nested dictionary with:
+#   First level is standard help or administrator help
+#   Second level is language xx where xx is the country code two-letter ISO 3166-1 alpha-2 (see above)
+#   Item is the complete URL web page for detailed help
+# The same URL can be used for all languages (although it's better to have translations)
+# Default here points to the author's web pages but it's best to adapt to your own
+# If language line does not exist here, will point to the Fediverse Bot's profile page
+
+help-url:
+  fr: https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-de-xmpp-au-fediverse-kqJ0Nj
+  en: https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-from-xmpp-to-fediverse-user-help-page-59dlkf
+  es: https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/puente-de-xmpp-a-fediverse-pagina-de-ayuda-al-usuario-3MJEi1
+  de: https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-von-xmpp-zu-fediverse-benutzerhilfeseite-OySJ5c
+  it: https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-da-xmpp-a-fediverse-pagina-di-aiuto-all-utente-XuA7vm
+  pt: https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-de-xmpp-para-fediverse-pagina-de-ajuda-do-utilizador-g51NDs
+  nl: https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-van-xmpp-naar-fediverse-gebruikershulppagina-UAzcWQ
+
+ahelp-url:
+  fr: https://gayfr.live
+  en: https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-from-xmpp-to-fediverse-administrator-help-page-e16ROz
+  es: https://gayfr.live
+  de: https://gayfr.live
+  it: https://gayfr.live
+  pt: https://gayfr.live
+  nl: https://gayfr.live
+
+
+### End of configuration file
+...

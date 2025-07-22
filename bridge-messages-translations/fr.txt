@@ -1,0 +1,104 @@
+# Messages en français (fr) pour le bridge
+# Vous pouvez changer le texte, mais vous devez conserver les {} et utiliser strictement une seule ligne par message, dans le même ordre
+# Chaque ligne peut contenir des caractères de retour à la ligne (antislash n) et peut être aussi longue que souhaitée (attention à la limite de caractères de Mastodon)
+#
+Le bridge XMPP/AP est prêt pour l'envoi de messages.
+L'envoi de messages par le bridge XMPP/AP est suspendu.
+Le bridge XMPP/AP est ouvert pour de nouvelles inscriptions.
+Le bridge XMPP/AP est fermé aux nouvelles inscriptions.
+Le bridge XMPP/AP est paramétré en mode liste verte.
+Le bridge XMPP/AP n'est pas paramétré en mode liste verte.
+Le bridge XMPP/AP est opérationnel avec le statut suivant :
+Désolé, cette commande n'est disponible que pour les administrateurs.
+Désolé, le bridge XMPP/AP est momentanément indisponible pour envoyer des messages, veuillez réessayer ultérieurement.
+Désolé, vous ne pouvez définir qu'une seule langue à la fois, essayez à nouveau.
+Désolé, la langue {0} n'est pas supportée pour le moment.
+Vous devez d'abord vous enregistrer avant de définir une langue par défaut.
+Désolé, vous ne pouvez exécuter qu'une seule commande à la fois, veuillez réessayer.
+Commande non reconnue, veuillez réessayer.
+Aucun message n'est envoyé à un utilisateur après une commande, veuillez réessayer sans.
+Aucune adresse à bloquer n'a été fournie, aucun compte n'a été rajouté à votre liste de blocage, avez-vous utilisé la bonne syntaxe pour le(s) compte(s) à bloquer ? {0}name@example.net avec le préfixe {0}
+Vous ne pouvez pas rajouter les domaines des comptes robots à la liste rouge du bridge XMPP/AP, commande annulée.
+Aucun domaine n'a été fourni pour rajouter à la liste rouge du bridge XMPP/AP.
+Aucun domaine n'a été fourni pour rajouter à la liste verte du bridge XMPP/AP.
+Aucune adresse à bloquer n'a été fournie, aucun compte n'a été rajouté à la liste de blocage du bridge XMPP/AP. Vous ne pouvez bloquer que des comptes XMPP à partir du Fediverse, et réciproquement, avez-vous utilisé la bonne syntaxe pour le(s) compte(s) à bloquer ? {0}name@example.net avec le préfixe {0}
+Le compte {0}{1} a été rajouté à votre liste de blocage.
+Le domaine {0} a été rajouté à la liste rouge du bridge XMPP/AP, et les comptes correspondants ont été désincrits.
+Le domaine {0} a été rajouté à la liste verte du bridge XMPP/AP.
+Le domaine {0} a été enlevé de la liste rouge du bridge XMPP/AP.
+Le domaine {0} a été enlevé de la liste verte du bridge XMPP/AP.
+Le domaine {0} a été enlevé de la liste verte du bridge XMPP/AP, et les comptes correspondants ont été désincrits.
+Le compte {0}{1} a été désinscrit et a été rajouté à la liste rouge du bridge XMPP/AP.
+Le compte {0}{1} existe déjà dans votre liste de blocage.
+Le compte {0}{1} existe déjà dans la liste de blocage du bridge XMPP/AP.
+Le domaine {0} existe déjà dans la liste rouge du bridge XMPP/AP.
+Le domaine {0} existe déjà dans la liste verte du bridge XMPP/AP.
+Vous bloquez le compte suivant: {0}{1}, le message n'est pas envoyé à cet utilisateur.
+Vous êtes bloqué par le compte suivant: {0}{1}, le message n'est pas envoyé à cet utilisateur.
+Aucune adresse à débloquer n'a été fournie, aucun compte n'a été enlevé de votre liste de blocage, avez-vous utilisé la bonne syntaxe pour le(s) compte(s) à débloquer ? {0}name@example.net avec le préfixe {0}
+Aucune adresse à débloquer n'a été fournie, aucun compte n'a été enlevé de la liste de blocage du bridge XMPP/AP. Vous ne pouvez débloquer que des comptes XMPP à partir du Fediverse, et réciproquement, avez-vous utilisé la bonne syntaxe pour le(s) compte(s) à débloquer ? {0}name@example.net avec le préfixe {0}
+Aucun domaine n'a été fourni, aucun n'a été enlevé de la liste rouge du bridge XMPP/AP.
+Aucun domaine n'a été fourni, aucun n'a été enlevé de la liste verte du bridge XMPP/AP.
+Le compte {0}{1} a été supprimé de votre liste de blocage.
+Le compte {0}{1} a été supprimé de la liste de blocage du bridge XMPP/AP.
+Le compte {0}{1} n'existe pas dans votre liste de blocage.
+Le compte {0}{1} n'existe pas dans la liste de blocage du bridge XMPP/AP.
+Le domaine {0} n'existe pas dans la liste rouge du bridge XMPP/AP.
+Le domaine {0} n'existe pas dans la liste verte du bridge XMPP/AP.
+Votre liste de blocage est actuellement vide.
+La liste de blocage du bridge XMPP/AP est actuellement vide.
+La liste rouge des domaines du bridge XMPP/AP est actuellement vide.
+La liste verte des domaines du bridge XMPP/AP est actuellement vide.
+La liste des utilisateurs actifs est actuellement vide.
+Voici la liste des utilisateurs actifs ({0}) :
+Votre liste de blocage contient les éléments suivants ({0}) :
+La liste rouge des domaines du bridge XMPP/AP est la suivante ({0}) :
+La liste verte des domaines du bridge XMPP/AP est la suivante ({0}) :
+Vous devez vous inscrire avant de pouvoir faire une opération sur une liste de blocage.
+(...) liste tronquée (...)
+La liste de blocage du bridge XMPP/AP contient les éléments suivants ({0}) :
+Vous ne pouvez pas bloquer les comptes administrateur ni les comptes robots, commande annulée.
+Désolé, votre compte est en liste bloquée pour les inscriptions sur le bridge XMPP/AP.
+Désolé mais votre instance/serveur est en liste rouge pour les inscriptions sur le bridge XMPP/AP.
+Désolé mais votre instance/serveur n'est pas sur la liste verte pour les inscriptions sur le bridge XMPP/AP.
+Vous êtes déjà enregistré sur le bridge XMPP/AP depuis le {0}.
+Vous vous êtes inscrit trop de fois sur le bridge XMPP/AP et vous avez dépassé la limite maximale de {0}.
+Vous vous êtes inscrit avec succès sur le bridge XMPP/AP.
+Désolé mais les inscriptions sur le bridge XMPP/AP sont suspendues pour le moment.
+Votre compte a été ajouté avec succès aux contacts du bridge XMPP/AP.
+Veuillez accepter la demande de suivi/contact pour assurer toutes les fonctionnalités.
+Veuillez svp me suivre / me rajouter à vos contacts pour assurer toutes les fonctionnalités.
+Votre compte n'a pas pu être ajouté aux contacts du bridge XMPP/AP, il se peut que vous ne puissiez pas utiliser toutes les fonctionnalités.
+Une erreur s'est produite en consultant votre compte Fediverse, est-il connu de notre serveur https://{0} ? Vous devez avoir interagi avec au moins un de nos membres avant de vous inscrire sur le bridge XMPP/AP.
+Vous ne pouvez pas vous inscrire à partir d'un compte robot Fediverse, veuillez réessayez à partir d'un compte standard.
+Vous ne pouvez pas vous inscrire à partir d'un compte de groupe Fediverse, veuillez réessayez à partir d'un compte standard.
+Votre profil contient le hashtag #NoBot ou #NoBridge indiquant que vous ne souhaitez pas interagir avec un compte robot ; nous respectons votre choix et n'avons pas inscrit votre compte.
+Votre compte Fediverse est trop peu actif, ou bien il n'est pas visible publiquement, réessayez plus tard.
+Une erreur s'est produite en vérifiant votre activité avec vos dernières publications afin d'éviter le spam, sont-elles visibles publiquement ?
+Votre compte a été retiré avec succès des contacts du bridge XMPP/AP.
+Vous n'êtes pas inscrit sur le bridge XMPP/AP.
+Vous avez déjà désinscrit ce compte du bridge XMPP/AP le {0}.
+Vous vous êtes désinscrit du bridge XMPP/AP avec succès.
+La langue par défaut a été définie avec succès à Français (fr).
+Chattez entre Fediverse et XMPP !\n\nEnvoyez un message à {0}{1} et mentionnez votre destinataire {2} avec le format {3}name@example.net, ou répondez directement à un message reçu.\n\nCommandes disponibles :\n- {4}{5}, {4}{6}, {4}{7} pour ajouter, supprimer, lister vos blocages.\n- {4}{8}, {4}{9} pour s'inscrire / se désinscrire.\n- {4}{10} pour contacter l'administrateur.\n- {4}{11} pour ce message.\n- {12}xx pour choisir xx comme langue préférée.\n\nPlus : {13}
+Commandes supplémentaires disponibles pour l'administrateur du bridge XMPP/AP :\n- {0}{1}, {0}{2} pour (dés)activer l'envoi de messages.\n- {0}{15}, {0}{16} pour ouvrir/fermer les inscriptions.\n- {0}{17} pour le statut actuel.\n- {0}{3} pour lister les utilisateurs actifs.\n- {0}{4}, {0}{5}, {0}{6} pour ajouter, supprimer, lister les utilisateurs bloqués du bridge.\n- {0}{7}, {0}{8}, {0}{9} pour ajouter, supprimer, lister les domaines de la liste verte.\n- {0}{10}, {0}{11}, {0}{12}, idem pour la liste rouge.\n- {0}{13} pour ce message.\n\nPlus : {14}
+Une erreur s'est produite en tentant d'envoyer un message à {0}{1}
+Une erreur s'est produite en tentant d'envoyer un message au Fediverse.
+Message envoyé avec succès à {0}{1}
+Message envoyé avec succès au Fediverse.
+Signalement du bridge XMPP/AP reçu de l'utilisateur {0}{1}
+Le rapport n'a pas pu être envoyé à l'administrateur du bridge XMPP/AP (non configuré).
+Rapport envoyé avec succès à l'administrateur du bridge XMPP/AP.
+Réponse reçue de {0} de l'utilisateur {1}
+Message reçu de {0} de l'utilisateur {1}
+Aucune commande reconnue ni aucune adresse destinataire n'a été fournie, avez-vous utilisé la bonne syntaxe {0}name@example.net avec le préfixe {0} ?\n\nVotre message était-il en clair (non chiffré) ?\n\nEnvoyez {1}{2} pour de l'aide.
+Aucune commande reconnue ni aucune adresse destinataire n'a été fournie, avez-vous utilisé la bonne syntaxe {0}name@example.net avec le préfixe {0} ?\n\nSi vous répondiez à un message, avez-vous répondu suffisamment rapidement ({1} minutes) ?\n\nSinon, votre message était-il en clair (non chiffré) ?\n\nEnvoyez {2}{3} pour de l'aide.
+Impossible d'envoyer ce message, essayez à nouveau avec le nom du ou des compte(s) destinataire(s) au format {0}name@example.net avec le préfixe {0}
+Impossible de répondre à ce message, essayez à nouveau avec le nom du ou des compte(s) destinataire(s) au format {0}name@example.net avec le préfixe {0}
+Trop d'adresses destinataires ont été fournies, dépassant le maximum de {0}. Aucun message n'a été envoyé, veuillez réessayer et découpez votre message si nécessaire.
+{0}{1} n'est pas inscrit sur le bridge XMPP/AP, demandez à cet utilisateur de s'inscrire avant de lui envoyer un message.
+Les adresses courtes du Fédiverse ne sont pas acceptées depuis XMPP car elles peuvent être ambiguës. Aucun message n'a été envoyé, essayez à nouveau avec le nom complet au format {0}name@example.net
+Votre message est trop long et dépasse la limite de {0} caractères. Aucun message n'a été envoyé, veuillez réessayer avec un message plus court.
+*** AVERTISSEMENT DE CONTENU ***
+--- Lien vers les médias joints ---
+--- Sondage, lien vers le message initial ---

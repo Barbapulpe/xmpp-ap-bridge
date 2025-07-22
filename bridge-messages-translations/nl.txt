@@ -1,0 +1,104 @@
+# Nederlandse (nl) berichtteksten voor Bridge Bot
+# U kunt de tekst wijzigen, maar u moet alle plaatsaanduidingen {} behouden en strikt één regel gebruiken voor elk tekstbericht, in dezelfde volgorde.
+# Elke regel kan newline-tekens (antislash n) bevatten en zo lang zijn als je nodig hebt (pas op voor Mastodon karakter post limieten).
+#
+XMPP/AP Bridge is klaar voor het versturen van berichten.
+XMPP/AP Bridge is geschorst voor het verzenden van berichten.
+XMPP/AP Bridge is geopend voor nieuwe gebruikersregistraties.
+XMPP/AP Bridge is gesloten voor nieuwe gebruikersregistraties.
+XMPP/AP Bridge is ingesteld op groene lijstmodus.
+XMPP/AP Bridge is niet ingesteld op groene lijstmodus.
+XMPP/AP Bridge is operationeel, met de volgende status:
+Sorry, deze opdracht is alleen beschikbaar als u een beheerder bent.
+Sorry, XMPP/AP Bridge is momenteel niet beschikbaar voor het verzenden van berichten. Probeer het later nog eens.
+Sorry, u kunt slechts één taal per keer instellen, probeer het opnieuw.
+Sorry, de taal {0} wordt momenteel niet ondersteund.
+Je moet je eerst registreren voordat je een standaardtaal kunt instellen.
+Sorry, je kunt maar één commando tegelijk uitvoeren, probeer het opnieuw.
+Niet herkend commando, probeer opnieuw.
+Berichten worden niet verzonden naar gebruikers na een commando, probeer het opnieuw zonder.
+Er zijn geen blokkades opgegeven, er is geen account toegevoegd aan je blokkadelijst, heb je de juiste syntaxis gebruikt voor de te blokkeren account(s)? {0}name@example.net met het voorvoegsel {0}
+U kunt de botdomeinen niet toevoegen aan de rode lijst van XMPP/AP Bridge, opdracht afgebroken.
+Er zijn geen domeinen opgegeven om toe te voegen aan de rode lijst van XMPP/AP Bridge.
+Er zijn geen domeinen opgegeven om toe te voegen aan de groene XMPP/AP Bridge-lijst.
+Er zijn geen blokkades opgegeven, er is geen account toegevoegd aan de XMPP/AP Bridge-blokkeringslijst. U kunt alleen XMPP-accounts van Fediverse blokkeren en omgekeerd, hebt u de juiste syntaxis gebruikt voor de te blokkeren account(s)? {0}name@example.net met het voorvoegsel {0}
+Account {0}{1} werd toegevoegd aan uw blokkadelijst.
+Domein {0} is toegevoegd aan de rode lijst van XMPP/AP Bridge en de bijbehorende accounts zijn afgemeld.
+Domein {0} werd toegevoegd aan de groene lijst van XMPP/AP Bridge.
+Domein {0} is verwijderd uit de rode lijst van XMPP/AP Bridge.
+Domein {0} is verwijderd uit de groene lijst van XMPP/AP Bridge.
+Domein {0} is verwijderd uit de groene lijst van XMPP/AP Bridge en de bijbehorende accounts zijn afgemeld.
+Account {0}{1} werd afgemeld en toegevoegd aan de XMPP/AP Bridge-blokkeringslijst.
+Account {0}{1} bestaat al in uw blokkadelijst.
+Account {0}{1} bestaat al in de XMPP/AP Bridge-blokkeringslijst.
+Domein {0} bestaat al in XMPP/AP Bridge rode lijst.
+Domein {0} bestaat al in XMPP/AP Bridge groene lijst.
+Je blokkeert de volgende account: {0}{1}, het bericht wordt niet verzonden naar die gebruiker.
+Je bent geblokkeerd door de volgende account: {0}{1}, het bericht is niet verzonden naar die gebruiker.
+Er zijn geen deblokkades opgegeven, er is geen account verwijderd van je blokkadelijst, heb je de juiste syntaxis gebruikt voor de account(s) die je wilt deblokkeren? {0}name@example.net met het voorvoegsel {0}
+Er zijn geen deblokkades opgegeven, er is geen account verwijderd van de XMPP/AP Bridge-blokkadelijst. U kunt alleen XMPP-accounts van Fediverse deblokkeren en omgekeerd, hebt u de juiste syntaxis gebruikt voor de te deblokkeren account(s)? {0}name@example.net met het voorvoegsel {0}
+Er zijn geen domeinen opgegeven en er zijn er geen verwijderd van de XMPP/AP Bridge-blokkadelijst.
+Er zijn geen domeinen opgegeven en er zijn er geen verwijderd van de groene XMPP/AP Bridge-lijst.
+Account {0}{1} werd verwijderd uit uw blokkadelijst.
+Account {0}{1} werd verwijderd uit de XMPP/AP Bridge-blokkeringslijst.
+Account {0}{1} bestaat niet in uw blokkadelijst.
+Account {0}{1} bestaat niet in de XMPP/AP Bridge-blokkeringslijst.
+Domein {0} bestaat niet in XMPP/AP Bridge rode lijst.
+Domein {0} bestaat niet in XMPP/AP Bridge groene lijst.
+Uw blokkadelijst is momenteel leeg.
+De XMPP/AP Bridge-blokkeringslijst is momenteel leeg.
+De rode lijst van XMPP/AP Bridge-domeinen is momenteel leeg.
+De groene lijst van XMPP/AP Bridge-domeinen is momenteel leeg.
+De lijst met actieve gebruikers is momenteel leeg.
+Hier is de lijst met actieve gebruikers ({0}):
+Uw blocklist bevat de volgende items ({0}):
+De domeinen in de rode lijst van de XMPP/AP Bridge zijn de volgende ({0}):
+De domeinen in de groene lijst van de XMPP/AP Bridge zijn de volgende ({0}):
+U moet zich registreren voordat u een bewerking op een blokkadelijst kunt uitvoeren.
+(...) lijst ingekort (...)
+De XMPP/AP Bridge blokkadelijst bevat de volgende items ({0}):
+U kunt de beheerder noch de botaccounts blokkeren, opdracht afgebroken.
+Sorry, uw account is geblokkeerd voor XMPP/AP Bridge registratie.
+Sorry, maar uw instantie/server staat op de rode lijst voor XMPP/AP Bridge-registratie.
+Sorry, maar uw instantie/server staat niet op de groene lijst voor XMPP/AP Bridge-registratie.
+Je hebt je al geregistreerd voor XMPP/AP Bridge op {0}.
+Je hebt je te vaak geregistreerd bij XMPP/AP Bridge en hebt de maximumlimiet van {0} overschreden.
+U bent succesvol geregistreerd bij XMPP/AP Bridge.
+Sorry, maar registraties voor XMPP/AP Bridge zijn momenteel gesloten.
+Uw account is toegevoegd aan XMPP/AP Bridge-contacten.
+Accepteer volg/contactverzoek om volledige functionaliteit te garanderen.
+Volg mij / voeg mij toe als contact om volledige functionaliteit te garanderen.
+Uw account kon niet worden toegevoegd aan XMPP/AP Bridge-contacten, mogelijk kunt u niet alle functies gebruiken.
+Er is een fout opgetreden bij het opzoeken van uw Fediverse account, is deze bekend bij onze server https://{0} ? U moet contact hebben met ten minste één van onze leden voordat u zich kunt registreren bij XMPP/AP Bridge.
+U kunt zich niet registreren vanaf een Fediverse bot account, probeer het opnieuw met een standaard account.
+U kunt zich niet registreren vanaf een Fediverse groepsaccount. Probeer het opnieuw met een standaardaccount.
+Uw profiel bevat de hashtag #NoBot of #NoBridge om aan te geven dat u geen interactie wenst met bot accounts; wij respecteren uw keuze en hebben uw account niet geregistreerd.
+Uw Fediverse-account heeft te weinig activiteit of is niet openbaar zichtbaar, probeer het later nog eens.
+Er is een fout opgetreden tijdens het controleren van uw meest recente statussen op activiteit en het vermijden van spam, zijn deze openbaar zichtbaar?
+Uw account is met succes verwijderd uit XMPP/AP Bridge-contacten.
+U bent niet geregistreerd bij XMPP/AP Bridge.
+U hebt deze account al afgemeld bij XMPP/AP Bridge op {0}.
+U bent succesvol afgemeld bij de XMPP/AP Bridge.
+De standaardtaal is gewijzigd in Nederlands (nl).
+Chat tussen Fediverse en XMPP! Stuur een bericht naar {0}{1} en vermeld uw {2} ontvanger(s) met de notatie {3}name@example.net, of antwoord direct op een ontvangen bericht.\n\nBeschikbare commando's:\n- {4}{5}, {4}{6}, {4}{7} om geblokkeerde accounts toe te voegen, te verwijderen, op te sommen in uw blokkadelijst.\n- {4}{8}, {4}{9} om te (de)registreren.\n- {4}{10} om een gebruiker te rapporteren of contact op te nemen met de beheerder.\n- {4}{11} voor dit bericht.\n- {12}xx om xx in te stellen als voorkeurstaal.\n\nMeer: {13}
+Aanvullende commando's voor de XMPP/AP Bridge beheerder:\n- {0}{1}, {0}{2} om het verzenden van berichten te (de)activeren.\n- {0}{15}, {0}{16} om gebruikersregistratie in/uit te schakelen.\n- {0}{17} om de huidige status af te drukken.\n- {0}{3} om een lijst van alle actieve gebruikers te maken.\n- {0}{4}, {0}{5}, {0}{6} om geblokkeerde gebruikers toe te voegen, te verwijderen, op te sommen op globaal Bridge.\n- {0}{7}, {0}{8}, {0}{9} om groene domeinen toe te voegen, te verwijderen, op te sommen.\n- {0}{10}, {0}{11}, {0}{12} om rode domeinen toe te voegen, te verwijderen, op te sommen.\n- {0}{13} voor dit bericht.\n\nMeer: {14}
+Er is een fout opgetreden bij het verzenden van het bericht naar {0}{1}
+Er is een fout opgetreden bij het verzenden van het bericht naar Fediverse.
+Bericht succesvol verzonden naar {0}{1}
+Bericht succesvol verzonden naar Fediverse.
+XMPP/AP Bridge rapport verzonden door gebruiker {0}{1}
+Rapport kon niet naar XMPP/AP Bridge-beheerder worden verzonden (niet geconfigureerd).
+Rapport met succes verzonden naar XMPP/AP Bridge-beheerder.
+Antwoord ontvangen van {0} gebruiker {1}
+Bericht ontvangen van {0} gebruiker {1}
+Er zijn geen commando's of bestemmingsadressen bekend. Hebt u de juiste syntaxis gebruikt {0}name@example.net met het voorvoegsel {0}?\n\nHebt u het bericht onversleuteld verzonden?\n\nStuur {1}{2} voor instructies.
+Er zijn geen commando's of bestemmingsadressen bekend, heb je de juiste syntax gebruikt {0}name@example.net met het voorvoegsel {0}?\n\nAls je op een bericht antwoordde, heb je dan snel genoeg geantwoord ({1} minuten)?\n\nAnders, heb je je bericht ongecodeerd verzonden?\n\nStuur {2}{3} voor instructies.
+Kan dit bericht niet verzenden, probeer het opnieuw door uw ontvanger(s) te adresseren met {0}name@example.net met het voorvoegsel {0}
+Kan dit bericht niet beantwoorden, probeer het opnieuw door uw ontvanger(s) te adresseren met {0}name@example.net met het voorvoegsel {0}
+Er zijn te veel bestemmingsadressen opgegeven, waardoor het maximum van {0} is overschreden. Er is geen bericht verzonden, probeer het opnieuw en splits uw bericht indien nodig.
+{0}{1} is niet geregistreerd op XMPP/AP Bridge, vraag de gebruiker om zich te registreren voordat u hem/haar een bericht kunt sturen.
+Korte adressering van Fediverse adressen wordt niet geaccepteerd door XMPP omdat het dubbelzinnig is. Geen bericht verzonden, probeer het opnieuw met de volledige naam in het formaat {0}name@example.net
+Uw bericht is te lang en overschrijdt de maximale tekenlimiet van {0}. Er is geen bericht verzonden, probeer het opnieuw met een korter bericht.
+*** INHOUDSWAARSCHUWING ***
+--- Links van bijgevoegde media ---
+--- Poll, link naar origineel bericht ---

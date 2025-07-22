@@ -1,0 +1,104 @@
+# English (en) message texts for Bridge Bot
+# You can change the text, but you must retain all placeholders {} and use strictly one line for each text message, in the same order
+# Each line can contain newline characters (antislash n) and be as long as you need (beware of Mastodon character post limits)
+#
+XMPP/AP Bridge is ready for sending messages.
+XMPP/AP bridge is suspended for sending messages.
+XMPP/AP Bridge is opened for new user registrations.
+XMPP/AP Bridge is closed for new user registrations.
+XMPP/AP Bridge is set to greenlist mode.
+XMPP/AP Bridge is not set to greenlist mode.
+XMPP/AP Bridge is operational, with the following status:
+Sorry, this command is only available if you are an administrator.
+Sorry, XMPP/AP Bridge is unavailable to send messages at the moment, try again later.
+Sorry, you can only set one language at a time, please try again.
+Sorry, the language {0} is unsupported at the moment.
+You need to register first before setting a default language.
+Sorry, you can only execute one command at a time, please try again.
+Unrecognized command, please try again.
+Messages are not sent to users following a command, try again without.
+No blocks were provided, no account was added to your blocklist, did you use the proper syntax for the account(s) to block? {0}name@example.net with the prefix {0}
+You cannot add the bot domains to XMPP/AP Bridge red list, command aborted.
+No domains were provided to add to XMPP/AP Bridge red list.
+No domains were provided to add to XMPP/AP Bridge green list.
+No blocks were provided, no account was added to the XMPP/AP Bridge blocklist. You can only block XMPP accounts from Fediverse and conversely, did you use the proper syntax for the account(s) to block? {0}name@example.net with the prefix {0}
+Account {0}{1} was added to your blocklist.
+Domain {0} was added to XMPP/AP Bridge red list, and the corresponding accounts have been unregistered.
+Domain {0} was added to XMPP/AP Bridge green list.
+Domain {0} was removed from XMPP/AP Bridge red list.
+Domain {0} was removed from XMPP/AP Bridge green list.
+Domain {0} was removed from XMPP/AP Bridge green list, and the corresponding accounts have been unregistered.
+Account {0}{1} was unregistered and was added to XMPP/AP Bridge blocklist.
+Account {0}{1} already exists in your blocklist.
+Account {0}{1} already exists in XMPP/AP Bridge blocklist.
+Domain {0} already exists in XMPP/AP Bridge red list.
+Domain {0} already exists in XMPP/AP Bridge green list.
+You are blocking the following account: {0}{1}, the message is not sent to that user.
+You are blocked by the following account: {0}{1}, the message is not sent to that user.
+No unblocks were provided, no account was removed from your blocklist, did you use the proper syntax for the account(s) to unblock? {0}name@example.net with the prefix {0}
+No unblocks were provided, no account was removed from the XMPP/AP Bridge blocklist. You can only unblock XMPP accounts from Fediverse and conversely, did you use the proper syntax for the account(s) to unblock? {0}name@example.net with the prefix {0}
+No domains were provided, none were removed from the XMPP/AP Bridge red list.
+No domains were provided, none were removed from the XMPP/AP Bridge green list.
+Account {0}{1} was removed from your blocklist.
+Account {0}{1} was removed from XMPP/AP Bridge blocklist.
+Account {0}{1} does not exist in your blocklist.
+Account {0}{1} does not exist in XMPP/AP Bridge blocklist.
+Domain {0} does not exist in XMPP/AP Bridge red list.
+Domain {0} does not exist in XMPP/AP Bridge green list.
+Your blocklist is currently empty.
+The XMPP/AP Bridge blocklist is currently empty.
+The XMPP/AP Bridge red listed domains is currently empty.
+The XMPP/AP Bridge green listed domains is currently empty.
+The list of active users is currently empty.
+Here is the list of active users ({0}):
+Your blocklist contains the following entries ({0}):
+The XMPP/AP Bridge red listed domains are the following ({0}):
+The XMPP/AP Bridge green listed domains are the following ({0}):
+You need to register before you can perform an operation on a blocklist.
+(...) list truncated (...)
+The XMPP/AP Bridge blocklist contains the following entries ({0}):
+You cannot block the administrator nor the bot accounts, command aborted.
+Sorry, your account is blocked for XMPP/AP bridge registration.
+Sorry but your instance/server is red listed for XMPP/AP bridge registration.
+Sorry but your instance/server is not on the green list for XMPP/AP bridge registration.
+You already registered to XMPP/AP bridge on {0}.
+You registered too many times to XMPP/AP bridge and exceeded the maximum limit of {0}.
+You registered successfully to XMPP/AP bridge.
+Sorry but registrations to XMPP/AP Bridge are currently closed.
+Your account was successfully added to XMPP/AP Bridge contacts.
+Please accept follow/contact request to ensure full functionality.
+Please follow me / add me as a contact to ensure full functionality.
+Your account could not be added to XMPP/AP Bridge contacts, you might not be able to use all functionalities.
+An error occurred while looking up your Fediverse account, is it known by our server https://{0} ? You need to interact with at least one of our members before registering to XMPP/AP bridge.
+You cannot register from a Fediverse bot account, please try again using a standard account.
+You cannot register from a Fediverse group account, please try again using a standard account.
+Your profile contains the hashtag #NoBot or #NoBridge indicating you do not want to interact with bot accounts; we respect your choice and did not register your account.
+Your Fediverse account has too low activity, or it is not publicly visible, please try again later.
+An error occurred while checking your most recent statuses for activity and avoid spam, are those publicly visible?
+Your account was successfully removed from XMPP/AP Bridge contacts.
+You are not registered to XMPP/AP bridge.
+You have already unregistered this account from XMPP/AP bridge on {0}.
+You successfully unregistered from XMPP/AP bridge.
+Default language successfully changed to English (en).
+Chat between Fediverse and XMPP!\n\nSend a message to {0}{1} and mention your {2} recipient(s) using the format {3}name@example.net, or reply directly to a received message.\n\nCommands available:\n- {4}{5}, {4}{6}, {4}{7} to add, remove, list blocked accounts from your blocklist.\n- {4}{8}, {4}{9} to (un)register.\n- {4}{10} to report a user or contact the administrator.\n- {4}{11} for this message.\n- {12}xx to set xx as your preferred language.\n\nMore: {13}
+Additional commands available to the XMPP/AP Bridge administrator:\n- {0}{1}, {0}{2} to (de)activate sending messages.\n- {0}{15}, {0}{16} to enable/disable user registration.\n- {0}{17} to print current status.\n- {0}{3} to list all active users.\n- {0}{4}, {0}{5}, {0}{6} to add, remove, list blocked users at the Bridge global level.\n- {0}{7}, {0}{8}, {0}{9} to add, remove, list green domains.\n- {0}{10}, {0}{11}, {0}{12} to add, remove, list red domains.\n- {0}{13} for this message.\n\nMore: {14}
+An error occurred while attempting to send message to {0}{1}
+An error occurred while attempting to send message to Fediverse.
+Message successfully sent to {0}{1}
+Message successfully sent to Fediverse.
+XMPP/AP Bridge report sent by user {0}{1}
+Report could not be sent to XMPP/AP Bridge administrator (not configured).
+Report successfully sent to XMPP/AP Bridge administrator.
+Reply received from {0} user {1}
+Message received from {0} user {1}
+No known command nor destination addresses were provided, did you use the proper syntax {0}name@example.net with the prefix {0} ?\n\nDid you send your message in clear (unencrypted)?\n\nSend {1}{2} for instructions.
+No known command nor destination addresses were provided, did you use the proper syntax {0}name@example.net with the prefix {0} ?\n\nIf you were answering to a message, did you reply soon enough ({1} minutes)?\n\nOtherwise, did you send your message in clear (unencrypted)?\n\nSend {2}{3} for instructions.
+Cannot send this message, try again by addressing your recipient(s) using {0}name@example.net with the prefix {0}
+Cannot reply to this message, try again by addressing your recipient(s) using {0}name@example.net with the prefix {0}
+Too many destination addresses were provided, exceeding the maximum of {0}. No message was sent, please try again and split your message if necessary.
+{0}{1} is not registered on XMPP/AP Bridge, please ask the user to register before you can send him/her a message.
+Short addressing of Fediverse addresses is not accepted from XMPP as it is ambiguous. No message was sent, try again with the full name using the format {0}name@example.net
+Your message is too long and exceeds the maximum character limit of {0}. No message was sent, please try again with a shorter message.
+*** CONTENT WARNING ***
+--- Links of attached media ---
+--- Poll, link to original message ---

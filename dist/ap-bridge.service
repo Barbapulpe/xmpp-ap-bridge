@@ -1,0 +1,26 @@
+[Unit]
+Description=ActivityPub Bot Bridge to send messages from XMPP to Mastodon
+Wants=network.target
+After=network.target
+
+[Service]
+User=changetobridgeuser
+Group=changetogroupuser
+Type=simple
+EnvironmentFile=/path/to/executable/.env
+ExecStart=/path/to/virtualenv/bin/python /path/to/executable/ap-bridge.py >> /path/to/logfile/xmpp-bridge.log 2>&1 
+Restart=on-failure
+RestartSec=60
+ExecReload=/bin/kill -HUP $MAINPID
+TimeoutStopSec=20s
+SendSIGKILL=no
+
+; Security Enhancements
+ProtectSystem=full
+PrivateDevices=true
+NoNewPrivileges=true
+PrivateTmp=true
+CapabilityBoundingSet=~CAP_SYS_ADMIN
+
+[Install]
+WantedBy=multi-user.target

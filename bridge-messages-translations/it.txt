@@ -1,0 +1,104 @@
+# Testi dei messaggi in italiano (it) per Bridge Bot
+# È possibile modificare il testo, ma è necessario mantenere tutti i segnaposto {} e utilizzare rigorosamente una riga per ogni messaggio di testo, nello stesso ordine.
+# Ogni riga può contenere caratteri di newline (antislash n) ed essere lunga quanto serve (attenzione ai limiti dei caratteri di Mastodon).
+#
+XMPP/AP Bridge è pronto per l'invio di messaggi.
+XMPP/AP Bridge è sospeso per l'invio di messaggi.
+XMPP/AP Bridge è aperto per la registrazione di nuovi utenti.
+XMPP/AP Bridge è chiuso per le registrazioni di nuovi utenti.
+XMPP/AP Bridge è definito in modalità lista verde.
+XMPP/AP Bridge non è definito in modalità elenco verde.
+XMPP/AP Bridge è operativo, con il seguente stato:
+Spiacente, questo comando è disponibile solo se si è amministratori.
+Spiacente, XMPP/AP Bridge non è disponibile per l'invio di messaggi al momento, riprovare più tardi.
+Spiacente, è possibile impostare solo una lingua alla volta, riprovare.
+Spiacente, la lingua {0} non è attualmente supportata.
+È necessario registrarsi prima di impostare una lingua predefinita.
+Spiacente, è possibile eseguire un solo comando alla volta, riprovare.
+Comando non riconosciuto, riprovare.
+I messaggi non vengono inviati agli utenti che seguono un comando, riprovare senza.
+Non è stato fornito alcun blocco, nessun account è stato aggiunto alla vostra blocklist, avete usato la sintassi corretta per l'account o gli account da bloccare? {0}name@example.net con il prefisso {0}
+Non è possibile aggiungere i domini bot alla lista rossa di XMPP/AP Bridge, il comando è stato interrotto.
+Non sono stati forniti domini da aggiungere alla lista rossa di XMPP/AP Bridge.
+Non sono stati forniti domini da aggiungere all'elenco verde di XMPP/AP Bridge.
+Non è stato fornito alcun blocco, nessun account è stato aggiunto alla blocklist di XMPP/AP Bridge. È possibile bloccare solo gli account XMPP da Fediverse e, al contrario, è stata utilizzata la sintassi corretta per gli account da bloccare? {0}name@example.net con il prefisso {0}
+L'account {0}{1} è stato aggiunto alla vostra lista di blocco.
+Il dominio {0} è stato aggiunto alla lista rossa di XMPP/AP Bridge e gli account corrispondenti sono stati cancellati.
+Il dominio {0} è stato aggiunto all'elenco verde di XMPP/AP Bridge.
+Il dominio {0} è stato rimosso dall'elenco rosso XMPP/AP Bridge.
+Il dominio {0} è stato rimosso dall'elenco verde XMPP/AP Bridge.
+Il dominio {0} è stato rimosso dall'elenco verde XMPP/AP Bridge e gli account corrispondenti non sono stati registrati.
+L'account {0}{1} non è stato registrato ed è stato aggiunto alla blocklist di XMPP/AP Bridge.
+L'account {0}{1} esiste già nella blocklist.
+L'account {0}{1} esiste già nella blocklist di XMPP/AP Bridge.
+Il dominio {0} esiste già nell'elenco rosso di XMPP/AP Bridge.
+Il dominio {0} esiste già nell'elenco verde di XMPP/AP Bridge.
+Si sta bloccando il seguente account: {0}{1}, il messaggio non viene inviato a quell'utente.
+L'utente è bloccato dal seguente account: {0}{1}, il messaggio non viene inviato a quell'utente.
+Non è stato fornito alcuno sblocco, nessun account è stato rimosso dalla lista di blocco, è stata utilizzata la sintassi corretta per gli account da sbloccare? {0}name@example.net con il prefisso {0}
+Non è stato fornito alcuno sblocco, nessun account è stato rimosso dalla blocklist XMPP/AP Bridge. È possibile sbloccare solo gli account XMPP da Fediverse e, viceversa, è stata utilizzata la sintassi corretta per gli account da sbloccare? {0}name@example.net con il prefisso {0}
+Non sono stati forniti domini, nessuno è stato rimosso dalla lista rossa di XMPP/AP Bridge.
+Non sono stati forniti domini, nessuno è stato rimosso dall'elenco verde di XMPP/AP Bridge.
+L'account {0}{1} è stato rimosso dalla blocklist.
+L'account {0}{1} è stato rimosso dall'elenco di blocco di XMPP/AP Bridge.
+L'account {0}{1} non esiste nella propria blocklist.
+L'account {0}{1} non esiste nella blocklist di XMPP/AP Bridge.
+Il dominio {0} non esiste nell'elenco rosso di XMPP/AP Bridge.
+Il dominio {0} non esiste nell'elenco verde di XMPP/AP Bridge.
+La blocklist è attualmente vuota.
+La lista di blocco XMPP/AP Bridge è attualmente vuota.
+L'elenco dei domini XMPP/AP Bridge in rosso è attualmente vuoto.
+L'elenco dei domini XMPP/AP Bridge in verde è attualmente vuoto.
+L'elenco degli utenti attivi è attualmente vuoto.
+Ecco l'elenco degli utenti attivi ({0}):
+La vostra blocklist contiene le seguenti voci ({0}):
+I domini XMPP/AP Bridge elencati in rosso sono i seguenti ({0}):
+I domini XMPP/AP Bridge elencati in verde sono i seguenti ({0}):
+È necessario registrarsi prima di poter eseguire un'operazione su una blocklist.
+(...) elenco troncato (...)
+La lista di blocco XMPP/AP Bridge contiene le seguenti voci ({0}):
+Non è possibile bloccare l'amministratore né gli account bot, comando interrotto.
+Spiacente, l'account è bloccato per la registrazione al bridge XMPP/AP.
+Spiacente, la vostra istanza/server è in lista rossa per la registrazione del bridge XMPP/AP.
+Siamo spiacenti ma la vostra istanza/server non è nella lista verde per la registrazione al bridge XMPP/AP.
+Ci si è già registrati al bridge XMPP/AP su {0}.
+Ci si è registrati troppe volte al bridge XMPP/AP e si è superato il limite massimo di {0}.
+La registrazione al bridge XMPP/AP è avvenuta con successo.
+Siamo spiacenti ma le registrazioni a XMPP/AP Bridge sono attualmente chiuse.
+Il vostro account è stato aggiunto con successo ai contatti di XMPP/AP Bridge.
+Si prega di accettare la richiesta di follow/contatto per garantire la piena funzionalità.
+Si prega di seguirmi/aggiungermi come contatto per garantire la piena funzionalità.
+Non è stato possibile aggiungere il vostro account ai contatti XMPP/AP Bridge, quindi potreste non essere in grado di utilizzare tutte le funzionalità.
+Si è verificato un errore durante la ricerca del tuo account Fediverse, è conosciuto dal nostro server https://{0}? È necessario interagire con almeno uno dei nostri membri prima di registrarsi a XMPP/AP bridge.
+Non è possibile registrarsi da un account bot Fediverse, riprovare con un account standard.
+Non è possibile registrarsi da un account di gruppo Fediverse, riprovare con un account standard.
+Il vostro profilo contiene l'hashtag #NoBot o #NoBridge che indica che non volete interagire con gli account bot; rispettiamo la vostra scelta e non abbiamo registrato il vostro account.
+Il vostro account Fediverse ha un'attività troppo bassa o non è visibile pubblicamente; riprovate più tardi.
+Si è verificato un errore durante il controllo dei tuoi stati più recenti per verificare l'attività ed evitare lo spam; sono visibili pubblicamente?
+Il vostro account è stato rimosso dai contatti XMPP/AP Bridge.
+Non sei registrato a XMPP/AP bridge.
+Questo account è già stato disregistrato da XMPP/AP bridge in data {0}.
+L'account è stato disregistrato con successo da XMPP/AP bridge.
+La lingua predefinita è stata cambiata con successo in Italiano (it).
+Chatta tra Fediverse e XMPP!\n\nInvia un messaggio a {0}{1} e menziona i tuoi {2} destinatari usando il formato {3}name@example.net, o rispondi direttamente a un messaggio ricevuto.\n\nComandi disponibili:\n- {4}{5}, {4}{6}, {4}{7} per aggiungere, rimuovere, elencare gli account bloccati dalla tua blocklist.\n- {4}{8}, {4}{9} per (dis)registrarsi.\n- {4}{10} per segnalare un utente o per contattare l'amministratore.\n- {4}{11} per questo messaggio.\n- {12}xx per impostare xx come lingua preferita.\n\nAltro: {13}
+Ulteriori comandi disponibili per l'amministratore del bridge XMPP/AP:\n- {0}{1}, {0}{2} per (de)attivare l'invio di messaggi.\n- {0}{15}, {0}{16} per abilitare/disabilitare la registrazione degli utenti.\n- {0}{17} per lo stato attuale.\n- {0}{3} per elencare tutti gli utenti attivi.\n- {0}{4}, {0}{5}, {0}{6} per aggiungere, rimuovere, elencare gli utenti bloccati a livello globale del Bridge.\n- {0}{7}, {0}{8}, {0}{9} per aggiungere, rimuovere, elencare i domini verdi.\n- {0}{10}, {0}{11}, {0}{12} per aggiungere, rimuovere, elencare i domini rossi.\n- {0}{13} per questo messaggio.\n\nAltro: {14}
+Si è verificato un errore durante il tentativo di inviare un messaggio a {0}{1}.
+Si è verificato un errore durante il tentativo di inviare un messaggio a Fediverse.
+Messaggio inviato con successo a {0}{1}
+Messaggio inviato con successo a Fediverse.
+Rapporto XMPP/AP Bridge inviato dall'utente {0}{1}
+Non è stato possibile inviare un rapporto all'amministratore di XMPP/AP Bridge (non configurato).
+Rapporto inviato con successo all'amministratore XMPP/AP Bridge.
+Risposta ricevuta dall'utente {0}{1}
+Messaggio ricevuto dall'utente {0}{1}
+Non sono stati forniti indirizzi di comando o di destinazione noti, è stata utilizzata la sintassi corretta {0}name@example.net con il prefisso {0} ?\n\nInviate il messaggio in chiaro (non criptato)?\n\nInviare {1}{2} per istruzioni.
+Non sono stati forniti indirizzi di comando o di destinazione, è stata utilizzata la sintassi corretta {0}name@example.net con il prefisso {0}? Se si stava rispondendo a un messaggio, si è risposto abbastanza presto ({1} minuti)? Altrimenti, il messaggio è stato inviato in chiaro (non criptato)?n\nInviare {2}{3} per le istruzioni.
+Impossibile inviare questo messaggio, riprovare a indirizzare i destinatari utilizzando {0}name@example.net con il prefisso {0}
+Impossibile rispondere a questo messaggio, riprovare a indirizzare i destinatari utilizzando {0}name@example.net con il prefisso {0}
+Sono stati forniti troppi indirizzi di destinazione, oltre il massimo di {0}. Non è stato inviato alcun messaggio, riprovare e dividere il messaggio se necessario.
+{0}{1} non è registrato su XMPP/AP Bridge; chiedere all'utente di registrarsi prima di inviargli un messaggio.
+Gli indirizzi brevi di Fediverse non sono accettati da XMPP perché ambigui. Non è stato inviato alcun messaggio, riprovare con il nome completo utilizzando il formato {0}name@example.net
+Il messaggio è troppo lungo e supera il limite massimo di caratteri di {0}. Non è stato inviato alcun messaggio, riprovare con un messaggio più breve.
+*** AVVERTENZA SUL CONTENUTO ***
+--- Link ai media allegati ---
+--- Sondaggio, link al messaggio originale ---

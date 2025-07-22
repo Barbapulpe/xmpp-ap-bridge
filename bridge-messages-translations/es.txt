@@ -1,0 +1,104 @@
+# Textos de mensajes en español (es) para Bridge Bot
+# Puedes cambiar el texto, pero debes conservar todos los marcadores de posición {} y usar estrictamente una línea para cada mensaje de texto, en el mismo orden
+# Cada línea puede contener caracteres de nueva línea (antislash n) y ser tan larga como necesites (cuidado con los límites de caracteres de Mastodon)
+#
+XMPP/AP Bridge está listo para enviar mensajes.
+XMPP/AP Bridge está suspendido para el envío de mensajes.
+XMPP/AP Bridge está abierto para nuevos registros de usuarios.
+XMPP/AP Bridge está cerrado para nuevos registros de usuarios.
+XMPP/AP Bridge está configurado en modo de lista verde.
+XMPP/AP Bridge no está configurado en modo de lista verde.
+XMPP/AP Bridge está operativo, con el siguiente estado:
+Lo sentimos, este comando sólo está disponible si eres administrador.
+Lo sentimos, XMPP/AP Bridge no está disponible para enviar mensajes en este momento, inténtelo más tarde.
+Lo sentimos, sólo se puede establecer un idioma a la vez, por favor inténtelo de nuevo.
+Lo sentimos, el idioma {0} no está soportado en este momento.
+Debe registrarse antes de establecer un idioma por defecto.
+Lo sentimos, sólo puede ejecutar un comando a la vez, por favor inténtelo de nuevo.
+Comando no reconocido, por favor inténtelo de nuevo.
+No se envían mensajes a los usuarios que siguen un comando, inténtelo de nuevo sin.
+No se han proporcionado bloqueos, no se ha añadido ninguna cuenta a su lista de bloqueados, ¿ha utilizado la sintaxis adecuada para la(s) cuenta(s) a bloquear? {0}name@example.net con el prefijo {0}
+No se pueden añadir los dominios bot a la lista roja de XMPP/AP Bridge, comando abortado.
+No se han proporcionado dominios para añadir a la lista roja de XMPP/AP Bridge.
+No se han proporcionado dominios para añadir a la lista verde de XMPP/AP Bridge.
+No se proporcionaron bloqueos, no se añadió ninguna cuenta a la lista de bloqueo de XMPP/AP Bridge. Sólo puede bloquear cuentas XMPP desde Fediverse y a la inversa, ¿utilizó la sintaxis adecuada para la(s) cuenta(s) a bloquear? {0}name@example.net con el prefijo {0}
+Se ha añadido la cuenta {0}{1} a tu lista de bloqueo.
+Se ha añadido el dominio {0} a la lista roja de XMPP/AP Bridge y se han anulado las cuentas correspondientes.
+Se ha añadido el dominio {0} a la lista verde de XMPP/AP Bridge.
+Se ha eliminado el dominio {0} de la lista roja de XMPP/AP Bridge.
+Se ha eliminado el dominio {0} de la lista verde de XMPP/AP Bridge.
+Se ha eliminado el dominio {0} de la lista verde de XMPP/AP Bridge y se han anulado las cuentas correspondientes.
+Se ha anulado el registro de la cuenta {0}{1} y se ha añadido a la lista de bloqueo de XMPP/AP Bridge.
+La cuenta {0}{1} ya existe en tu lista de bloqueados.
+La cuenta {0}{1} ya existe en la lista de bloqueo de XMPP/AP Bridge.
+El dominio {0} ya existe en la lista roja de XMPP/AP Bridge.
+El dominio {0} ya existe en la lista verde de XMPP/AP Bridge.
+Estás bloqueando la siguiente cuenta: {0}{1}, el mensaje no se envía a ese usuario.
+Estás bloqueado por la siguiente cuenta {0}{1}, el mensaje no se envía a ese usuario.
+No se han proporcionado desbloqueos, no se ha eliminado ninguna cuenta de tu lista de bloqueados, ¿has utilizado la sintaxis adecuada para la(s) cuenta(s) a desbloquear? {0}name@example.net con el prefijo {0}
+No se han proporcionado desbloqueos, no se ha eliminado ninguna cuenta de la lista de bloqueo de XMPP/AP Bridge. Sólo puede desbloquear cuentas XMPP desde Fediverse y a la inversa, ¿ha utilizado la sintaxis adecuada para desbloquear las cuentas? {0}name@example.net con el prefijo {0}
+No se proporcionaron dominios, no se eliminó ninguno de la lista roja de XMPP/AP Bridge.
+No se proporcionaron dominios, no se eliminó ninguno de la lista verde de XMPP/AP Bridge.
+Se ha eliminado la cuenta {0}{1} de la lista de bloqueados.
+La cuenta {0}{1} se ha eliminado de la lista de bloqueo de XMPP/AP Bridge.
+La cuenta {0}{1} no existe en tu lista de bloqueo.
+La cuenta {0}{1} no existe en la lista de bloqueo de XMPP/AP Bridge.
+El dominio {0} no existe en la lista roja de XMPP/AP Bridge.
+El dominio {0} no existe en la lista verde de XMPP/AP Bridge.
+La lista de bloqueo está actualmente vacía.
+La lista de bloqueo de XMPP/AP Bridge está actualmente vacía.
+La lista roja de dominios de XMPP/AP Bridge está actualmente vacía.
+La lista verde de dominios de XMPP/AP Bridge está actualmente vacía.
+La lista de usuarios activos está actualmente vacía:
+Aquí está la lista de usuarios activos ({0}):
+Su lista de bloqueo contiene las siguientes entradas ({0}):
+Los dominios de la lista roja de XMPP/AP Bridge son los siguientes ({0}):
+Los dominios de la lista verde de XMPP/AP Bridge son los siguientes ({0}):
+Debe registrarse antes de poder realizar una operación en una lista de bloqueo.
+(...) lista truncada (...)
+La lista de bloqueo de XMPP/AP Bridge contiene las siguientes entradas ({0}):
+No se pueden bloquear las cuentas del administrador ni del bot, comando abortado.
+Lo sentimos, pero su cuenta está en la lista de bloqueo para el registro en XMPP/AP Bridge.
+Lo sentimos, pero su instancia/servidor está en la lista roja para el registro en XMPP/AP Bridge.
+Lo sentimos, pero su instancia/servidor no está en la lista verde para el registro en XMPP/AP Bridge.
+Ya se ha registrado en XMPP/AP Bridge en {0}.
+Se ha registrado demasiadas veces en XMPP/AP Bridge y ha superado el límite máximo de {0}.
+Se ha registrado correctamente en XMPP/AP Bridge.
+Lo sentimos, pero las inscripciones a XMPP/AP Bridge están actualmente cerradas.
+Su cuenta se ha añadido correctamente a los contactos de XMPP/AP Bridge.
+Por favor, acepte la solicitud de seguimiento/contacto para garantizar la plena funcionalidad.
+Por favor, sígueme / añádeme como contacto para asegurar una funcionalidad completa.
+Tu cuenta no ha podido ser añadida a los contactos de XMPP/AP Bridge, es posible que no puedas utilizar todas las funcionalidades.
+Se ha producido un error al buscar su cuenta Fediverse, ¿la conoce nuestro servidor https://{0} ? Necesitas interactuar con al menos uno de nuestros miembros antes de registrarte en XMPP/AP bridge.
+No puede registrarse desde una cuenta bot de Fediverse, por favor inténtelo de nuevo utilizando una cuenta estándar.
+No puede registrarse desde una cuenta de grupo Fediverse, por favor inténtelo de nuevo utilizando una cuenta estándar.
+Su perfil contiene el hashtag #NoBot o #NoBridge indicando que no desea interactuar con cuentas bot; respetamos su elección y no registramos su cuenta.
+Tu cuenta Fediverse tiene muy poca actividad, o no es visible públicamente, por favor inténtalo más tarde.
+Se ha producido un error al comprobar tus estados más recientes para ver si hay actividad y evitar el spam, ¿son visibles públicamente?
+Tu cuenta ha sido eliminada correctamente de los contactos de XMPP/AP Bridge.
+No estás registrado en XMPP/AP Bridge.
+Ya has dado de baja esta cuenta de XMPP/AP Bridge en {0}.
+Te has dado de baja con éxito de XMPP/AP Bridge.
+El idioma por defecto se ha cambiado a Español (es).
+Chat entre Fediverse y XMPP!\n\nEnvíe un mensaje a {0}{1} y mencione su(s) {2} destinatario(s) con el formato {3}name@example.net, o responda directamente a un mensaje recibido.\n\nComandos disponibles:\n- {4}{5}, {4}{6}, {4}{7} para añadir, eliminar, listar cuentas bloqueadas de su lista de bloqueo. \n- {4}{8}, {4}{9} para (des)registrarse.\n- {4}{10} para denunciar a un usuario o contactar el admin.\n- {4}{11} para este mensaje.\n- {12}xx para establecer xx como su idioma preferido.\n\nMás: {13}
+Comandos adicionales disponibles para el administrador de XMPP/AP Bridge:\n- {0}{1}, {0}{2} para (des)activar el envío de mensajes.\n- {0}{15}, {0}{16} para activar/desactivar el registro de usuarios.\n- {0}{17} para el estado actual.\n- {0}{3} para listar todos los usuarios activos.\n- {0}{4}, {0}{5}, {0}{6} para añadir, eliminar, listar usuarios bloqueados a nivel global del Bridge.\n- {0}{7}, {0}{8}, {0}{9} para añadir, eliminar, listar dominios de la lista verde.\n- {0}{10}, {0}{11}, {0}{12} para añadir, eliminar, listar dominios de la lista roja.\n- {0}{13} para este mensaje.\n\nMás: {14}
+Se ha producido un error al intentar enviar un mensaje a {0}{1}
+Se ha producido un error al intentar enviar un mensaje a Fediverse.
+Mensaje enviado correctamente a {0}{1}
+Mensaje enviado correctamente a Fediverse.
+Informe XMPP/AP Bridge enviado por el usuario {0}{1}
+No se ha podido enviar el informe al administrador de XMPP/AP Bridge (no está configurado).
+Informe enviado correctamente al administrador de XMPP/AP Bridge.
+Respuesta recibida de {0} usuario {1}
+Mensaje recibido de {0} usuario {1}
+No se proporcionaron direcciones de comando ni de destino conocidas, ¿utilizó la sintaxis adecuada {0}name@example.net con el prefijo {0} ?\n\n¿Envió su mensaje en claro (sin cifrar)?\n\nEnvíe {1}{2} para recibir instrucciones.
+No se proporcionaron direcciones de comando ni de destino conocidas, ¿utilizó la sintaxis adecuada {0}name@example.net con el prefijo {0} ?\n\nSi estaba respondiendo a un mensaje, ¿respondió lo suficientemente pronto ({1} minutos)?\n\nSi no, ¿envió su mensaje en claro (sin cifrar)?\n\nEnvíe {2}{3} para recibir instrucciones.
+No se puede enviar este mensaje, inténtelo de nuevo dirigiéndose a su(s) destinatario(s) utilizando {0}name@example.net con el prefijo {0}
+No se puede responder a este mensaje, inténtelo de nuevo dirigiéndose a su(s) destinatario(s) utilizando {0}name@example.net con el prefijo {0}
+Se han proporcionado demasiadas direcciones de destino, superando el máximo de {0}. No se ha enviado ningún mensaje, inténtelo de nuevo y divida su mensaje si es necesario.
+{0}{1} no está registrado en XMPP/AP Bridge, por favor pídale al usuario que se registre antes de poder enviarle un mensaje.
+Las direcciones cortas de Fediverse no se aceptan desde XMPP por ser ambiguas. No se ha enviado ningún mensaje, inténtelo de nuevo con el nombre completo utilizando el formato {0}name@example.net
+Su mensaje es demasiado largo y supera el límite máximo de caracteres de {0}. No se ha enviado ningún mensaje, inténtelo de nuevo con un mensaje más corto.
+*** AVISO DE CONTENIDO ***
+--- Enlaces a los medios adjuntos ---
+--- Encuesta, enlace al mensaje original ---

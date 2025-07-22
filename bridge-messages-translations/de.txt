@@ -1,0 +1,104 @@
+# Deutsche (de) Nachrichtentexte für Bridge Bot
+# Sie können den Text ändern, aber Sie müssen alle Platzhalter {} beibehalten und genau eine Zeile für jede Textnachricht verwenden, in der gleichen Reihenfolge
+# Jede Zeile kann Zeilenumbrüche (antislash n) enthalten und so lang sein, wie Sie es brauchen (beachten Sie die Mastodon-Zeichenbeschränkungen für Posts)
+#
+XMPP/AP-Bridge ist zum Senden von Nachrichten bereit.
+XMPP/AP-Bridge ist für das Senden von Nachrichten gesperrt.
+XMPP/AP-Bridge ist für neue Benutzerregistrierungen geöffnet.
+XMPP/AP-Bridge ist für neue Benutzerregistrierungen geschlossen.
+XMPP/AP-Bridge ist für den Modus „Grüne Liste“ definiert.
+XMPP/AP-Bridge ist nicht für den Modus „Grüne Liste“ definiert.
+XMPP/AP-Bridge ist betriebsbereit, mit dem folgenden Status:
+Entschuldigung, dieser Befehl ist nur verfügbar, wenn Sie ein Administrator sind.
+Entschuldigung, XMPP/AP Bridge ist im Moment nicht verfügbar, um Nachrichten zu senden, versuchen Sie es später noch einmal.
+Entschuldigung, Sie können immer nur eine Sprache einstellen, bitte versuchen Sie es erneut.
+Entschuldigung, die Sprache {0} wird im Moment nicht unterstützt.
+Sie müssen sich erst registrieren, bevor Sie eine Standardsprache einstellen können.
+Entschuldigung, Sie können immer nur einen Befehl ausführen, bitte versuchen Sie es noch einmal.
+Unbekannter Befehl, bitte versuchen Sie es noch einmal.
+Nach einem Befehl werden keine Nachrichten an Benutzer gesendet, versuchen Sie es noch einmal ohne.
+Es wurden keine Sperren angegeben, es wurde kein Konto zu Ihrer Sperrliste hinzugefügt, haben Sie die richtige Syntax für das/die zu sperrenden Konto/Konten verwendet? {0}name@example.net mit dem Präfix {0}
+Sie können die Bot-Domänen nicht zur roten Liste der XMPP/AP-Bridge hinzufügen, der Befehl wurde abgebrochen.
+Es wurden keine Domänen angegeben, die zur roten Liste der XMPP/AP-Bridge hinzugefügt werden können.
+Es wurden keine Domänen angegeben, die zur grünen Liste der XMPP/AP-Bridge hinzugefügt werden können.
+Es wurden keine Sperren bereitgestellt, kein Konto wurde der XMPP/AP-Bridge-Blockliste hinzugefügt. Sie können nur XMPP-Konten von Fediverse blockieren, und haben Sie umgekehrt die richtige Syntax für das/die zu blockierende(n) Konto/Konten verwendet? {0}name@example.net mit dem Präfix {0}
+Das Konto {0}{1} wurde zu Ihrer Blockliste hinzugefügt.
+Die Domäne {0} wurde zur roten Liste der XMPP/AP-Bridge hinzugefügt, und die entsprechenden Konten wurden unregistriert.
+Domäne {0} wurde zur grünen Liste der XMPP/AP-Bridge hinzugefügt.
+Domäne {0} wurde von der roten XMPP/AP-Bridge-Liste entfernt.
+Domäne {0} wurde von der grünen XMPP/AP-Bridge-Liste entfernt.
+Domäne {0} wurde von der grünen Liste der XMPP/AP-Bridge entfernt, und die entsprechenden Konten wurden deregistriert.
+Konto {0}{1} wurde unregistriert und zur XMPP/AP-Bridge-Blockliste hinzugefügt.
+Das Konto {0}{1} existiert bereits in Ihrer Blockliste.
+Konto {0}{1} existiert bereits in der XMPP/AP-Bridge-Blockliste.
+Domäne {0} existiert bereits in der roten XMPP/AP-Bridge-Liste.
+Domäne {0} existiert bereits in der grünen XMPP/AP-Bridge-Liste.
+Sie blockieren das folgende Konto: {0}{1}, die Nachricht wird nicht an diesen Benutzer gesendet.
+Sie werden von folgendem Konto blockiert: {0}{1}, die Nachricht wird nicht an diesen Benutzer gesendet.
+Es wurden keine Entsperrungen angegeben, kein Konto wurde von Ihrer Blockliste entfernt. Haben Sie die richtige Syntax für das/die zu entsperrende(n) Konto/Konten verwendet? {0}name@example.net mit dem Präfix {0}
+Es wurden keine Entsperrungen angegeben, kein Konto wurde aus der XMPP/AP Bridge-Blockliste entfernt. Sie können XMPP-Konten nur von Fediverse und umgekehrt entsperren. Haben Sie die richtige Syntax für das/die zu entsperrende(n) Konto/Konten verwendet? {0}name@example.net mit dem Präfix {0}
+Es wurden keine Domänen angegeben, keine wurde von der roten Liste der XMPP/AP-Bridge entfernt.
+Es wurden keine Domänen angegeben, keine wurde von der grünen Liste der XMPP/AP-Bridge entfernt.
+Konto {0}{1} wurde von Ihrer Blockliste entfernt.
+Konto {0}{1} wurde von der XMPP/AP-Bridge-Blockliste entfernt.
+Das Konto {0}{1} existiert nicht in Ihrer Blockliste.
+Das Konto {0}{1} existiert nicht in der XMPP/AP-Bridge-Blockliste.
+Domäne {0} existiert nicht in der roten XMPP/AP-Bridge-Liste.
+Domäne {0} existiert nicht in der grünen XMPP/AP-Bridge-Liste.
+Ihre Blockliste ist derzeit leer.
+Die XMPP/AP-Bridge-Blockliste ist derzeit leer.
+Die rote Liste der XMPP/AP-Bridge-Domänen ist derzeit leer.
+Die grüne Liste der XMPP/AP-Bridge-Domänen ist derzeit leer.
+Die Liste der aktiven Benutzer ist derzeit leer.
+Hier ist die Liste der aktiven Benutzer ({0}):
+Ihre Blockliste enthält die folgenden Einträge ({0}):
+Die rot aufgelisteten XMPP/AP-Bridge-Domänen sind die folgenden ({0}):
+Die grün aufgelisteten XMPP/AP-Bridge-Domänen sind die folgenden ({0}):
+Sie müssen sich registrieren, bevor Sie eine Operation an einer Blockliste durchführen können.
+(...) Liste abgeschnitten (...)
+Die XMPP/AP-Bridge-Blockliste enthält die folgenden Einträge ({0}):
+Sie können weder den Administrator noch die Bot-Konten sperren, Befehl abgebrochen.
+Entschuldigung, Ihr Konto ist für die XMPP/AP-Bridge-Registrierung gesperrt.
+Entschuldigung, aber Ihre Instanz/Ihr Server ist für die XMPP/AP-Bridge-Registrierung rot markiert.
+Ihr(e) Instanz/Server steht leider nicht auf der grünen Liste für die XMPP/AP-Bridge-Registrierung.
+Sie haben sich bereits bei XMPP/AP-Bridge auf {0} registriert.
+Sie haben sich zu oft bei der XMPP/AP-Bridge registriert und die maximale Anzahl von {0} überschritten.
+Sie haben sich erfolgreich bei der XMPP/AP-Bridge registriert.
+Leider sind die Anmeldungen zur XMPP/AP Bridge derzeit geschlossen.
+Ihr Konto wurde erfolgreich zu den XMPP/AP Bridge-Kontakten hinzugefügt.
+Bitte akzeptieren Sie die Folge-/Kontaktanfrage, um die volle Funktionalität zu gewährleisten.
+Bitte folgen Sie mir / fügen Sie mich als Kontakt hinzu, um den vollen Funktionsumfang zu gewährleisten.
+Ihr Konto konnte nicht zu den XMPP/AP-Bridge-Kontakten hinzugefügt werden. Möglicherweise können Sie nicht alle Funktionen nutzen.
+Bei der Suche nach Ihrem Fediverse-Konto ist ein Fehler aufgetreten, ist es unserem Server https://{0} bekannt? Sie müssen mit mindestens einem unserer Mitglieder interagieren, bevor Sie sich bei der XMPP/AP-Bridge anmelden.
+Sie können sich nicht von einem Fediverse-Bot-Konto aus anmelden, bitte versuchen Sie es erneut mit einem Standard-Konto.
+Sie können sich nicht von einem Fediverse-Gruppenkonto aus registrieren, bitte versuchen Sie es erneut mit einem Standardkonto.
+Ihr Profil enthält den Hashtag #NoBot oder #NoBridge, was bedeutet, dass Sie nicht mit Bot-Konten interagieren möchten; wir respektieren Ihre Entscheidung und haben Ihr Konto nicht registriert.
+Ihr Fediverse-Konto hat zu wenig Aktivität oder ist nicht öffentlich sichtbar, bitte versuchen Sie es später noch einmal.
+Bei der Überprüfung Ihres letzten Status auf Aktivität und Spamvermeidung ist ein Fehler aufgetreten, sind diese öffentlich sichtbar?
+Ihr Konto wurde erfolgreich aus den XMPP/AP-Bridge-Kontakten entfernt.
+Sie sind nicht bei XMPP/AP-Bridge registriert.
+Sie haben dieses Konto bereits von der XMPP/AP-Bridge auf {0} abgemeldet.
+Sie haben sich erfolgreich von XMPP/AP-Bridge abgemeldet.
+Die Standardsprache wurde erfolgreich auf Deutsch (de) geändert.
+Chatten Sie zwischen Fediverse und XMPP!\n\nSenden Sie eine Nachricht an {0}{1} und erwähnen Sie Ihre(n) {2} Empfänger(n) unter Verwendung des Formats {3}name@example.net, oder antworten Sie direkt auf eine empfangene Nachricht.\n\nVerfügbare Befehle:\n- {4}{5}, {4}{6}, {4}{7} zum Hinzufügen, Entfernen, Auflisten gesperrter Konten von Ihrer Blockliste.\n- {4}{8}, {4}{9} zum (Ab-)Registrieren.\n- {4}{10} zum Melden eines Benutzers oder Kontaktieren des Administrators.\n- {4}{11} für diese Nachricht.\n- {12}xx zum Einstellen von xx als bevorzugte Sprache.\n\nMehr: {13}
+Zusätzliche Befehle, die dem XMPP/AP-Bridge-Administrator zur Verfügung stehen:\n- {0}{1}, {0}{2} zum (De-)Aktivieren des Nachrichtenversands.\n- {0}{15}, {0}{16} zum Aktivieren/Deaktivieren der Benutzerregistrierung.\n- {0}{17} zum Drucken des aktuellen Status.\n- {0}{3} zum Auflisten aller aktiven Benutzer.\n- {0}{4}, {0}{5}, {0}{6} zum Hinzufügen, Entfernen, Auflisten gesperrter Benutzer auf globaler Bridge-Ebene.\n- {0}{7}, {0}{8}, {0}{9} zum Hinzufügen, Entfernen, Auflisten grüner Domänen.\n- {0}{10}, {0}{11}, {0}{12} dasselbe gilt für die roten Domänen.\n- {0}{13} für diese Nachricht.\n\nMehr: {14}
+Beim Versuch, eine Nachricht an {0}{1} zu senden, ist ein Fehler aufgetreten.
+Bei dem Versuch, eine Nachricht an Fediverse zu senden, ist ein Fehler aufgetreten.
+Nachricht erfolgreich an {0}{1} gesendet
+Die Nachricht wurde erfolgreich an Fediverse gesendet.
+XMPP/AP-Bridge-Bericht von Benutzer {0}{1} gesendet
+Bericht konnte nicht an den XMPP/AP-Bridge-Administrator gesendet werden (nicht konfiguriert).
+Bericht erfolgreich an XMPP/AP-Bridge-Administrator gesendet.
+Antwort erhalten von {0} Benutzer {1}
+Nachricht erhalten von {0} Benutzer {1}
+Es wurden keine bekannten Befehls- oder Zieladressen angegeben. Haben Sie die korrekte Syntax {0}name@example.net mit dem Präfix {0} verwendet?\n\nHaben Sie Ihre Nachricht unverschlüsselt gesendet?\n\nSenden Sie {1}{2} für Anweisungen.
+Es wurden keine bekannten Befehls- oder Zieladressen angegeben, haben Sie die korrekte Syntax {0}name@example.net mit dem Präfix {0} verwendet?\n\nWenn Sie auf eine Nachricht geantwortet haben, haben Sie früh genug geantwortet ({1} Minuten)?\n\nAndernfalls haben Sie Ihre Nachricht unverschlüsselt gesendet?\n\nSenden Sie {2}{3} für Anweisungen.
+Diese Nachricht kann nicht gesendet werden, versuchen Sie es erneut, indem Sie den/die Empfänger mit {0}name@example.net mit dem Präfix {0} ansprechen.
+Diese Nachricht kann nicht beantwortet werden, versuchen Sie es erneut, indem Sie den/die Empfänger mit {0}name@example.net mit dem Präfix {0} ansprechen.
+Es wurden zu viele Zieladressen angegeben, die das Maximum von {0} überschreiten. Es wurde keine Nachricht gesendet, bitte versuchen Sie es erneut und teilen Sie Ihre Nachricht gegebenenfalls auf.
+{0}{1} ist nicht bei XMPP/AP Bridge registriert, bitte fordern Sie den Benutzer auf, sich zu registrieren, bevor Sie ihm/ihr eine Nachricht senden können.
+Kurze Adressierungen von Fediverse-Adressen werden von XMPP nicht akzeptiert, da sie mehrdeutig sind. Es wurde keine Nachricht gesendet, versuchen Sie es erneut mit dem vollständigen Namen im Format {0}name@example.net
+Ihre Nachricht ist zu lang und überschreitet die maximale Zeichenanzahl von {0}. Es wurde keine Nachricht gesendet, bitte versuchen Sie es erneut mit einer kürzeren Nachricht.
+*** INHALTSWARNUNG ***
+--- Links der angehängten Medien ---
+--- Umfrage, Link zur ursprünglichen Nachricht ---
