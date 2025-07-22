@@ -46,7 +46,7 @@ Update the profile to your liking, we strongly recommend the following settings 
 - **Preferences**: untick all email notifications.
 - **Automated deletion of messages**: tick and select the desired period (e.g. 1 month, consistent with your backend configuration, see below), you should not configure exceptions.
 
-Finally, you need to create an application to retrieve a secret token. Do the following:
+Now, you need to create an application to retrieve a secret token. Do the following:
 - Go to the **Development** menu on your profile page.
 - Click on the **New application** button.
 - Fill in an application name, e.g. "XMPP Bridge".
@@ -100,14 +100,14 @@ Once all is configured, you are ready to start the backend so the two bots start
 
 If using a linux distribution based on systemd, you can copy the two files provided in the `dist/` directory to `/etc/systemd/system/` (on Ubuntu), edit them to adapt to your own system (linux user and paths), and start both services as root:
 ```
-\# systemctl enable --now ap-bridge
-\# systemctl enable --now xmpp-bridge
+# systemctl enable --now ap-bridge
+# systemctl enable --now xmpp-bridge
 ```
 
 You can check all went well using:
 ```
-\# journalctl -u ap-bridge
-\# journalctl -u xmpp-bridge
+# journalctl -u ap-bridge
+# journalctl -u xmpp-bridge
 ```
 
 On the first run, the Bridge will create and initialize all required files and database tables. On subsequent runs, cleanup is performed on each startup: you should consider a regular restart of the backend bots.
