@@ -29,7 +29,7 @@ Example commands on Ubuntu:
 ```
 $ python3 -m venv bridge_env
 $ source bridge_env/bin/activate
-$ git pull https://github.com/Barbapulpe/xmpp-ap-bridge
+$ git clone https://github.com/Barbapulpe/xmpp-ap-bridge.git
 $ cd xmpp-ap-bridge
 $ pip install -r requirements.txt
 $ deactivate
