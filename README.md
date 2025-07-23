@@ -13,7 +13,7 @@ From a user standpoint: nothing to install, nothing to configure, just communica
 
 ## Requirements
 
-A server running Python version 3.10 is required for the backend (specific syntax in the code is not compatible with lower versions).
+A server (VPS with SSH access) running Python version 3.10 is required for the backend (specific syntax in the code is not compatible with lower versions).
 
 It is also required to create a bot account on a Mastodon server (or another Fediverse server if it use Mastodon-compatible API's, untested). This server can be any server but you need to check that it allows for bot accounts.
 
@@ -27,17 +27,22 @@ Using a dedicated user (do not run as root!), start by creating a Python virtual
 
 Example commands on Ubuntu:
 ```
-$ python3 -m venv bridge_env
-$ source bridge_env/bin/activate
+$ adduser --disabled-password bridgeuser
+$ su - bridgeuser
 $ git clone https://github.com/Barbapulpe/xmpp-ap-bridge.git
 $ cd xmpp-ap-bridge
+$ python3 -m venv bridge_env
+$ source bridge_env/bin/activate
 $ pip install -r requirements.txt
 $ deactivate
+$ exit
 ```
 
 ### Mastodon bot
 
 You need to create a bot account on a Mastodon (or API-compatible) server. Apply to register an account, making sure bot accounts are allowed by the server moderation, and secure this account with 2FA.
+
+If you want to keep consistency with other bots deployed using XMPP/AP Bridge, you could name it `@xmpp_bridge@example.social`, and use the avatar profile and banner provided in the `assets/` subdirectory.
 
 Update the profile to your liking, we strongly recommend the following settings on your account configuration:
 - **Profile**: tick "This is a robot account".
@@ -57,19 +62,21 @@ Finally, you need to tick on that same page the following scopes: `read:accounts
 
 Click on the button **Send**, you will be presented with three lines at the top which **must be kept secret**: "Application ID", "Secret" and "Your access token".
 
-Make a note of this **Access token**, you will require it to configre the backend just after.
+Make a note of this **Access token**, you will require it to configure the backend just after. You should no longer need to login interactively to this account.
 
 ### XMPP bot
 
 You also need to create a bot account on a XMPP server. Apply to register an account, making sure bot accounts are allowed by the server moderation, using a very long and complex password.
 
-Update the profile to your liking, and make a note of this password, you will require it to configre the backend just after.
+If you want to keep consistency with other bots deployed using XMPP/AP Bridge, you could give it the JID `ap_bridge@example.im`, and use the avatar profile (vCard) and banner (if you use a client which provides such a feature, e.g. Movim) present in the `assets/` subdirectory.
+
+Update the profile to your liking, and make a note of this password, you will require it to configure the backend just after. You should no longer need to login interactively to this account.
 
 ## Configuration
 
 ### Environment variables
 
-You can use environment variables for locating the configuration file and for the bot accounts credentials. These can be set in the .env file, and if storing credentials, permissions should be restricted with `chmod 600 .env` whilst deleting unused lines in the .env file.
+You can use environment variables for locating the configuration file and for the bot accounts credentials. These can be set in the `.env` file, and if storing credentials, permissions should be restricted with `chmod 600 .env` whilst deleting unused lines in the `.env` file.
 
 | Environment variable | Details |
 | --- | --- |
@@ -137,19 +144,33 @@ So again, introducing a bridge means inserting a person-in-the-middle able to in
 
 The most privacy-friendly scenario would be: you are running a Mastodon server and a XMPP server, with the Bridge backend also running on one of those two servers and each bot registered on those two servers. That way, you would not increase your privacy exposure for anyone using the Bridge from one of those two servers.
 
+### Technical insights
+
+The philosophy behind the design is *KISS*: "Keep It Simple, Stupid". Simple means robust. But also some choices had to be made, with the user experience in mind, this is why we only rely on chat messages using client bots (no server component nor Pubsub nor MUC).
+
+For communicating on XMPP side, we use the asynchronous slixmpp library. For the Mastodon side, we use the Mastodon.py library which relies on API calls to the Mastodon instance.
+
+No crawling to other servers is done, only calls to the two servers hosting the bots are made with a distinctive user agent, with the exception of a `nodeinfo` query on a new user registration from the Fediverse (to identify the application name).
+
+Each bot listens to incoming messages and notifications, and calls the shared library to process events and parse the messages for commands. A second temporary connection will be initiated when sending a message from one of the two bots directly to the user in the other world.
+
+User registration, blocklists and communication ID's are all managed in a local database, we do not use blocking of accounts from the bots themselves. Messages' ID's are necessary to collect to manage the "reply / send again" feature, as all communications appear to be with/from the bots from the user perspective, so we need to register the upstream message ID. All such ID's and metadata are deleted after the configured retention period.
+
+As an exception, blocked domain lists are stored in files rather than database: this is to allow for manual editing or importing of lists of domains, although everything can be managed using bot commands.
+
 ## Administration and moderation
 
 In the configuration file, you can assign so-called administrators for the Bridge, who act as global moderators: blocking of accounts, management of greenlists and redlists of domains. These administrator accounts can be existing standard users on Fediverse / XMPP and should be separate from the bot accounts, the latter should not be used interactively.
 
 This is described extensively [here](https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-from-xmpp-to-fediverse-administrator-help-page-e16ROz)
 
-Please note that domain lists are stored in files rather than database: this is to allow for manual editing or importing of lists of domains, although everything can be managed using bot commands.
+Moderation and protection against abuse are an important feature of this Bridge. Moreover, configuration offers many different scenarios, such as a Bridge open to all, to one only open to a limited or local community.
 
-Moderation and protection against abuse is an important feature of this Bridge. Moreover, configuration offers many different scenarios, such as a Bridge open to all to one only open to a limited or local community.
+## User guides and documentation
 
-## User guides
+User and administrator guides are available in each supported language and referred to in the bot help command, the English version of the user guide is available [here](https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-from-xmpp-to-fediverse-user-help-page-59dlkf)
 
-User guides are available in each supported language and referred to in the bot help command, the English version is available [here](https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-from-xmpp-to-fediverse-user-help-page-59dlkf)
+The full documentation index for all languages is available [here](https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/xmpp-activitypub-bridge-documentation-KdpNJ9)
 
 ## License
 
