@@ -81,7 +81,7 @@ You have already unregistered this account from XMPP/AP bridge on {0}.
 You successfully unregistered from XMPP/AP bridge.
 Default language successfully changed to English (en).
 Chat between Fediverse and XMPP!\n\nSend a message to {0}{1} and mention your {2} recipient(s) using the format {3}name@example.net, or reply directly to a received message.\n\nCommands available:\n- {4}{5}, {4}{6}, {4}{7} to add, remove, list blocked accounts from your blocklist.\n- {4}{8}, {4}{9} to (un)register.\n- {4}{10} to report a user or contact the administrator.\n- {4}{11} for this message.\n- {12}xx to set xx as your preferred language.\n\nMore: {13}
-Additional commands available to the XMPP/AP Bridge administrator:\n- {0}{1}, {0}{2} to (de)activate sending messages.\n- {0}{15}, {0}{16} to enable/disable user registration.\n- {0}{17} to print current status.\n- {0}{3} to list all active users.\n- {0}{4}, {0}{5}, {0}{6} to add, remove, list blocked users at the Bridge global level.\n- {0}{7}, {0}{8}, {0}{9} to add, remove, list green domains.\n- {0}{10}, {0}{11}, {0}{12} to add, remove, list red domains.\n- {0}{13} for this message.\n\nMore: {14}
+Additional commands for XMPP/AP Bridge administrators:\n- {0}{1}, {0}{2} to (de)activate sending messages.\n- {0}{15}, {0}{16} to enable/disable user registration.\n- {0}{17} for current status.\n- {0}{3} to list all active users.\n- {0}{4}, {0}{5}, {0}{6} to add, remove, list globally blocked users.\n- {0}{7}, {0}{8}, {0}{9} to add, remove, list green domains.\n- {0}{10}, {0}{11}, {0}{12}, same for red domains.\n- {0}{13} for this message.\n\nMore: {14}
 An error occurred while attempting to send message to {0}{1}
 An error occurred while attempting to send message to Fediverse.
 Message successfully sent to {0}{1}
