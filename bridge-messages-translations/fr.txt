@@ -63,6 +63,7 @@ Désolé mais votre instance/serveur est en liste rouge pour les inscriptions su
 Désolé mais votre instance/serveur n'est pas sur la liste verte pour les inscriptions sur le bridge XMPP/AP.
 Vous êtes déjà enregistré sur le bridge XMPP/AP depuis le {0}.
 Vous vous êtes inscrit trop de fois sur le bridge XMPP/AP et vous avez dépassé la limite maximale de {0}.
+Désolé mais le nombre maximum des inscriptions possibles sur le bridge XMPP/AP a été atteint.
 Vous vous êtes inscrit avec succès sur le bridge XMPP/AP.
 Désolé mais les inscriptions sur le bridge XMPP/AP sont suspendues pour le moment.
 Votre compte a été ajouté avec succès aux contacts du bridge XMPP/AP.
@@ -89,6 +90,7 @@ Message envoyé avec succès au Fediverse.
 Signalement du bridge XMPP/AP reçu de l'utilisateur {0}{1}
 Le rapport n'a pas pu être envoyé à l'administrateur du bridge XMPP/AP (non configuré).
 Rapport envoyé avec succès à l'administrateur du bridge XMPP/AP.
+Le taux maximal pour envoyer des messages a été atteint pour vous. Aucun message n'a été envoyé, essayez à nouveau un peu plus tard.
 Réponse reçue de {0} de l'utilisateur {1}
 Message reçu de {0} de l'utilisateur {1}
 Aucune commande reconnue ni aucune adresse destinataire n'a été fournie, avez-vous utilisé la bonne syntaxe {0}name@example.net avec le préfixe {0} ?\n\nVotre message était-il en clair (non chiffré) ?\n\nEnvoyez {1}{2} pour de l'aide.

@@ -63,6 +63,7 @@ Sorry but your instance/server is red listed for XMPP/AP bridge registration.
 Sorry but your instance/server is not on the green list for XMPP/AP bridge registration.
 You already registered to XMPP/AP bridge on {0}.
 You registered too many times to XMPP/AP bridge and exceeded the maximum limit of {0}.
+Sorry but the maximum number of registered users to XMPP/AP Bridge has been reached.
 You registered successfully to XMPP/AP bridge.
 Sorry but registrations to XMPP/AP Bridge are currently closed.
 Your account was successfully added to XMPP/AP Bridge contacts.
@@ -89,6 +90,7 @@ Message successfully sent to Fediverse.
 XMPP/AP Bridge report sent by user {0}{1}
 Report could not be sent to XMPP/AP Bridge administrator (not configured).
 Report successfully sent to XMPP/AP Bridge administrator.
+The maximum rate for sending messages has been reached for you. No message was sent, please try again in a little while.
 Reply received from {0} user {1}
 Message received from {0} user {1}
 No known command nor destination addresses were provided, did you use the proper syntax {0}name@example.net with the prefix {0} ?\n\nDid you send your message in clear (unencrypted)?\n\nSend {1}{2} for instructions.

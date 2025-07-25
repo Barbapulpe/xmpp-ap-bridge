@@ -63,6 +63,7 @@ dred
 dgreen
 dbexists
 regmax
+maxusers
 regok
 closedreg
 addcontact
@@ -89,6 +90,7 @@ oksendfedi
 report
 xmppadminempty
 reportok
+maxrate
 answer
 newmsg
 noaddr0

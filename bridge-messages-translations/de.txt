@@ -63,6 +63,7 @@ Entschuldigung, aber Ihre Instanz/Ihr Server ist für die XMPP/AP-Bridge-Registr
 Ihr(e) Instanz/Server steht leider nicht auf der grünen Liste für die XMPP/AP-Bridge-Registrierung.
 Sie haben sich bereits bei XMPP/AP-Bridge auf {0} registriert.
 Sie haben sich zu oft bei der XMPP/AP-Bridge registriert und die maximale Anzahl von {0} überschritten.
+Leider wurde die maximale Anzahl registrierter Benutzer für XMPP/AP Bridge erreicht.
 Sie haben sich erfolgreich bei der XMPP/AP-Bridge registriert.
 Leider sind die Anmeldungen zur XMPP/AP Bridge derzeit geschlossen.
 Ihr Konto wurde erfolgreich zu den XMPP/AP Bridge-Kontakten hinzugefügt.
@@ -89,6 +90,7 @@ Die Nachricht wurde erfolgreich an Fediverse gesendet.
 XMPP/AP-Bridge-Bericht von Benutzer {0}{1} gesendet
 Bericht konnte nicht an den XMPP/AP-Bridge-Administrator gesendet werden (nicht konfiguriert).
 Bericht erfolgreich an XMPP/AP-Bridge-Administrator gesendet.
+Die maximale Anzahl an Nachrichten, die Sie versenden können, wurde erreicht. Es wurde keine Nachricht versendet. Bitte versuchen Sie es in Kürze erneut.
 Antwort erhalten von {0} Benutzer {1}
 Nachricht erhalten von {0} Benutzer {1}
 Es wurden keine bekannten Befehls- oder Zieladressen angegeben. Haben Sie die korrekte Syntax {0}name@example.net mit dem Präfix {0} verwendet?\n\nHaben Sie Ihre Nachricht unverschlüsselt gesendet?\n\nSenden Sie {1}{2} für Anweisungen.

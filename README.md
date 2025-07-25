@@ -23,14 +23,15 @@ Finally, it is required to create a bot account on a XMPP server. Just the same,
 
 ### Backend server
 
-Using a dedicated user (do not run as root!), start by creating a Python virtual environment to run this project, pull the git repository and install required python libraries.
+Using a dedicated user (do not run as root!), start by creating a Python virtual environment to run this project, clone the git repository, checkout the latest stable release and install required python libraries.
 
 Example commands on Ubuntu:
 ```
-$ adduser --disabled-password bridgeuser
-$ su - bridgeuser
+# adduser --disabled-password bridgeuser
+# su - bridgeuser
 $ git clone https://github.com/Barbapulpe/xmpp-ap-bridge.git
 $ cd xmpp-ap-bridge
+$ git checkout $(git tag -l | grep '^v[0-9.]*$' | sort -V | tail -n 1)
 $ python3 -m venv bridge_env
 $ source bridge_env/bin/activate
 $ pip install -r requirements.txt
@@ -72,6 +73,25 @@ If you want to keep consistency with other bots deployed using XMPP/AP Bridge, y
 
 Update the profile to your liking, and make a note of this password, you will require it to configure the backend just after. You should no longer need to login interactively to this account.
 
+### Updating
+
+When a new release is available, you can update by simply fetching and checking out the new version using git.
+
+Example commands on Ubuntu:
+```
+# su - bridgeuser
+$ cd xmpp-ap-bridge
+$ git fetch
+$ git checkout $(git tag -l | grep '^v[0-9.]*$' | sort -V | tail -n 1)
+$ exit
+```
+
+Then you will need to restart both bots. Run as root (or using `sudo`):
+```
+# systemctl restart ap-bridge
+# systemctl restart xmpp-bridge
+```
+
 ## Configuration
 
 ### Environment variables
@@ -105,7 +125,7 @@ Any changes made to the configuration file needs restarting the backend for both
 
 Once all is configured, you are ready to start the backend so the two bots start listening to events and dealing with messages.
 
-If using a linux distribution based on systemd, you can copy the two files provided in the `dist/` directory to `/etc/systemd/system/` (on Ubuntu), edit them to adapt to your own system (linux user and paths), and start both services as root:
+If using a linux distribution based on systemd, you can copy the two files provided in the `dist/` directory to `/etc/systemd/system/` (on Ubuntu), edit them to adapt to your own system (linux user and paths), and start both services as root (or using `sudo`):
 ```
 # systemctl enable --now ap-bridge
 # systemctl enable --now xmpp-bridge
@@ -129,7 +149,9 @@ This has the following advantages: simple for users (I tried to make the mention
 
 Conversely, this induces limitations on scalability, mostly imposed by the hosting servers. XMPP host server may limit communications in various ways, as there are many different configurations out there. Mastodon host servers have a hard-coded rate-limit of 300 API calls per 5 minutes (an average of 1 call per second).
 
-So in a scenario with many users and activity, this rate-limiting might cause delays in forwarding the messages (retries will be attempted). This is why you are encouraged to deploy your own Bridge if you intend to use it thoroughly, in the spirit of federation.
+So in a scenario with many users and activity, this rate-limiting might cause delays in forwarding the messages (retries will be attempted). Since release v0.7.0, you can limit the number of user registrations and throttle the number of messages each user can send within a time window.
+
+This is why you are encouraged to deploy your own Bridge if you intend to use it thoroughly, in the spirit of federation.
 
 ### Privacy considerations
 

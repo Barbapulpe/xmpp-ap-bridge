@@ -63,6 +63,7 @@ Sorry, maar uw instantie/server staat op de rode lijst voor XMPP/AP Bridge-regis
 Sorry, maar uw instantie/server staat niet op de groene lijst voor XMPP/AP Bridge-registratie.
 Je hebt je al geregistreerd voor XMPP/AP Bridge op {0}.
 Je hebt je te vaak geregistreerd bij XMPP/AP Bridge en hebt de maximumlimiet van {0} overschreden.
+Sorry, maar het maximale aantal geregistreerde gebruikers voor XMPP/AP Bridge is bereikt.
 U bent succesvol geregistreerd bij XMPP/AP Bridge.
 Sorry, maar registraties voor XMPP/AP Bridge zijn momenteel gesloten.
 Uw account is toegevoegd aan XMPP/AP Bridge-contacten.
@@ -89,6 +90,7 @@ Bericht succesvol verzonden naar Fediverse.
 XMPP/AP Bridge rapport verzonden door gebruiker {0}{1}
 Rapport kon niet naar XMPP/AP Bridge-beheerder worden verzonden (niet geconfigureerd).
 Rapport met succes verzonden naar XMPP/AP Bridge-beheerder.
+Het maximale aantal berichten dat u kunt versturen is bereikt. Er is geen bericht verzonden. Probeer het over een tijdje opnieuw.
 Antwoord ontvangen van {0} gebruiker {1}
 Bericht ontvangen van {0} gebruiker {1}
 Er zijn geen commando's of bestemmingsadressen bekend. Hebt u de juiste syntaxis gebruikt {0}name@example.net met het voorvoegsel {0}?\n\nHebt u het bericht onversleuteld verzonden?\n\nStuur {1}{2} voor instructies.

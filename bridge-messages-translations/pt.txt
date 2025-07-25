@@ -63,6 +63,7 @@ Lamentamos, mas a sua instância/servidor está no lista vermelha para o registo
 Lamentamos, mas a sua instância/servidor não se encontra no lista verde para o registo no XMPP/AP Bridge.
 Já se registou no XMPP/AP Bridge em {0}.
 Registou-se demasiadas vezes no XMPP/AP Bridge e excedeu o limite máximo de {0}.
+Desculpe, mas o número máximo de utilizadores registados no XMPP/AP Bridge foi atingido.
 Registou-se com êxito no XMPP/AP Bridge.
 Lamentamos, mas os registos no XMPP/AP Bridge estão atualmente encerrados.
 A sua conta foi adicionada com êxito aos contactos do XMPP/AP Bridge.
@@ -89,6 +90,7 @@ Mensagem enviada com sucesso para o Fediverse.
 Relatório do XMPP/AP Bridge enviado pelo utilizador {0}{1}
 Não foi possível enviar o relatório para o administrador do XMPP/AP Bridge (não configurado).
 Relatório enviado com sucesso para o administrador do XMPP/AP Bridge.
+A taxa máxima para envio de mensagens foi atingida para si. Nenhuma mensagem foi enviada, tente novamente daqui a pouco.
 Resposta recebida do utilizador {0}{1}
 Mensagem recebida do utilizador {0}{1}
 Não foram fornecidos endereços de comando nem de destino conhecidos, utilizou a sintaxe correta {0}name@example.net com o prefixo {0} ?\n\nEnviou a mensagem em claro (não encriptada)?\n\nEnvie {1}{2} para obter instruções.

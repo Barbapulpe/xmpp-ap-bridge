@@ -73,6 +73,10 @@ translation-dir: "/path/to/translationfiles/bridge-messages-translations"
 # BEWARE OF CHANGING THIS SETTING: on init, cleanup depends on it (if True, non-greenlisted domain accounts will be unregistered)
 greenlist-mode: False
 
+# Maximum total number of users who can register (if exceeded, new registrations will no longer be possible)
+# Can be disabled by setting to 0
+max-reg-users: 100
+
 # Minimum number of posts expected from an account applying for registration from Fediverse (to avoid spam and junk accounts)
 # green listed domains skip this check, or you can set to 0 to disable
 min-ap-activity-posts: 5
@@ -82,6 +86,13 @@ max-ap-registrations: 8
 
 # Maximum number of recipients to whom a user can send one message (to avoid spamming)
 max-dest-to-send: 4
+
+# Maximum rate of sendings allowed per user in a 5-minutes window (to avoid abuse and bot accounts)
+# Tailor according to your expected activity and number of users, counts each sender-receiver communication
+# As a reminder, Mastodon API calls are limited (hardcoded) to 300 in a 5-minutes window
+# Rate-limiting is also taken care of by the libraries, but we want to avoid spamming and delaying others
+# Can be disabled by setting to 0
+max-user-rate: 30
 
 # Flag to decide on policy if sender is blocked: does he receive a notice or is the message silently ignored?
 # True / False, provided to avoid harassment if a user is blocked by a recipient

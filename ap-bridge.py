@@ -104,5 +104,5 @@ if __name__ == '__main__':
     while True: # This will loop forever until killed or crashes, manage restart or error from OS systemd
         xmpp.connect()
         asyncio.get_event_loop().run_until_complete(xmpp.disconnected)
-        LogError(config.log_file, ">> Disconnected from XMPP Bridge on main event loop, will try to reconnect in 10 seconds...", "").log()
+        LogError(config.log_file, ">> Disconnected from XMPP Bridge on main event loop, will try to reconnect in 10 seconds...", "disconnected from server").log()
         sleep(10) # Try and reconnected after 10 seconds, loops forever (until error or killed)

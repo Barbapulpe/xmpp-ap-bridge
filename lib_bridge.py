@@ -2,7 +2,7 @@
 # XMPP/AP Bridge Main Libraries #
 #################################
 
-VERSION = "0.6.1"
+VERSION = "0.7.0"
 
 
 import sqlite3
@@ -85,8 +85,10 @@ class ConfigLoader:
         self.min_active = min(self._config_list["min-ap-activity-posts"], 40) # Mastodon limit is 40
         self.green_mode = self._config_list["greenlist-mode"]
         self.max_reg = self._config_list["max-ap-registrations"]
+        self.max_reg_users = self._config_list["max-reg-users"]
         self.max_dest = self._config_list["max-dest-to-send"]
         self.max_reply = self._config_list["max-minutes-for-reply"]
+        self.max_rate = self._config_list["max-user-rate"]
         self.retention = self._config_list["max-retention-days-revoked-user"]
         self.comm_limit = self._config_list["comm-max-limit-days"]
         self.silent_block = self._config_list["silent-block"]
@@ -352,6 +354,7 @@ class UserRegistrar:
         self._language_list = config.language_list
         self._min_active = config.min_active
         self._max_reg = config.max_reg
+        self._max_reg_users = config.max_reg_users
         self._user_agent = config.user_agent
         self.success = False
 
@@ -367,6 +370,16 @@ class UserRegistrar:
         with open(self._open_file) as f:
             opened = f.read().strip()
         return self._messages["closedreg"][self.lang] if opened == self._command_list[21] else ""
+
+    def _max_reguser(self): # Check if user max registrations is reached
+        m = False
+        with sqlite3.connect(self._database_file) as conn:
+            c = conn.cursor()
+            c.execute("SELECT * FROM users WHERE revoke_date IS NULL")
+            entry = c.fetchall()
+            c.close()
+            if entry and self._max_reg_users: m = bool(len(entry) >= self._max_reg_users)
+        return self._messages["maxusers"][self.lang] if m else ""
 
     def _add_to_contact(self): # Add user_from as a contact / follow of bot and check mutual status
         response = ""
@@ -454,7 +467,7 @@ class UserRegistrar:
         return "Fediverse"
 
     def register_user(self): # Register a user in database and follow/contact
-        self.reply_text = self._is_closed()
+        self.reply_text = self._is_closed() or self._max_reguser()
         if self.reply_text: return
 
         self.reply_text, self.lang, self.id = self._redlist_check()
@@ -906,6 +919,7 @@ class MessageSender:
         self._pfix = config.pfix
         self._max_dest = config.max_dest
         self._max_reply = config.max_reply
+        self._max_rate = config.max_rate
         self._char_limit = config.char_limit
         self._silent_block = config.silent_block
         self._silent_send = config.silent_send
@@ -959,9 +973,21 @@ class MessageSender:
             conn.commit()
             c.close()
 
-    def send(self): # Let's try and send this message
-        self.reply_text = self._is_started()
+    def _user_rate(self): # Check if user rate of sender is exceeded (window of 5 minutes)
+        m = False
+        with sqlite3.connect(self._database_file, detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES) as conn:
+            c = conn.cursor()
+            c.execute("SELECT * FROM comm WHERE (type, from_u) = (?, ?) ORDER BY from_date DESC LIMIT ?", (1-self.user_type, self.user_from, self._max_rate))
+            entry = c.fetchall()
+            c.close()
+        if entry and self._max_rate:
+            now = datetime.now()
+            c = sum(1 for e in entry if now - e[3] < timedelta(minutes=5))
+            m = bool(c >= self._max_rate)
+        return self._messages["maxrate"][self.lang] if m else ""
 
+    def send(self): # Let's try and send this message
+        self.reply_text = self._is_started() or self._user_rate()
         if self.reply_text: return
         if self._flag_aps:
             self.reply_text = self._messages["apshort"][self.lang].format(self._pfix[1-self.user_type])
