@@ -78,13 +78,16 @@ greenlist-mode: False
 max-reg-users: 100
 
 # Minimum number of posts expected from an account applying for registration from Fediverse (to avoid spam and junk accounts)
-# green listed domains skip this check, or you can set to 0 to disable
+# green listed domains skip this check, or you can set to 0 to disable completely
 min-ap-activity-posts: 5
 
 # Maximum number of times the same account can register (again, to avoid abuse)
+# Can be disabled by setting to 0
 max-ap-registrations: 8
 
 # Maximum number of recipients to whom a user can send one message (to avoid spamming)
+# You can set to 1 if you only want to allow one-to-one messages
+# Cannot be disabled (0 is not an allowed value) as it would allow mass-sending and abuse, must be less than max-user-rate (below)
 max-dest-to-send: 4
 
 # Maximum rate of sendings allowed per user in a 5-minutes window (to avoid abuse and bot accounts)
@@ -106,13 +109,16 @@ silent-send: True
 # Replying or sending again a message to the same recipient can be done from XMPP without naming again the recipient
 # This simulates as close as possible a "real" conversation
 # However, we time this out to avoid confusion or sending to an unintended recipient (forgetting a conversation was initiated)
+# This timeout can be disabled by setting to 0
 max-minutes-for-reply: 90
 
 # On bridge initialization, retention period (in days) before we delete all information from database from revoked accounts
+# This retention period can be set to infinite (value 0) but not recommended for privacy compliance
 max-retention-days-revoked-user: 30
 
 # On bridge initialization, retention period (in days) before we delete communication metadata between accounts
 # It is recommended to align the Mastodon bot settings for autodelete of messages to the same period
+# This retention period can be set to infinite (value 0) but not recommended for privacy compliance
 comm-max-limit-days: 30
 
 # Default language (used initially, by default) and language when unknown code is requested
