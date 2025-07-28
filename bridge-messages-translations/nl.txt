@@ -63,6 +63,7 @@ Sorry, maar uw instantie/server staat op de rode lijst voor XMPP/AP Bridge-regis
 Sorry, maar uw instantie/server staat niet op de groene lijst voor XMPP/AP Bridge-registratie.
 Je hebt je al geregistreerd voor XMPP/AP Bridge op {0}.
 Je hebt je te vaak geregistreerd bij XMPP/AP Bridge en hebt de maximumlimiet van {0} overschreden.
+Het maximale aantal toegestane geregistreerde gebruikers is {0}.
 Sorry, maar het maximale aantal geregistreerde gebruikers voor XMPP/AP Bridge is bereikt.
 U bent succesvol geregistreerd bij XMPP/AP Bridge.
 Sorry, maar registraties voor XMPP/AP Bridge zijn momenteel gesloten.

@@ -63,6 +63,7 @@ Lo sentimos, pero su instancia/servidor está en la lista roja para el registro 
 Lo sentimos, pero su instancia/servidor no está en la lista verde para el registro en XMPP/AP Bridge.
 Ya se ha registrado en XMPP/AP Bridge en {0}.
 Se ha registrado demasiadas veces en XMPP/AP Bridge y ha superado el límite máximo de {0}.
+El número máximo de usuarios registrados permitidos es {0}.
 Lo sentimos, pero se ha alcanzado el número máximo de usuarios registrados en XMPP/AP Bridge.
 Se ha registrado correctamente en XMPP/AP Bridge.
 Lo sentimos, pero las inscripciones a XMPP/AP Bridge están actualmente cerradas.

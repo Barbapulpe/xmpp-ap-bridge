@@ -63,6 +63,7 @@ Lamentamos, mas a sua instância/servidor está no lista vermelha para o registo
 Lamentamos, mas a sua instância/servidor não se encontra no lista verde para o registo no XMPP/AP Bridge.
 Já se registou no XMPP/AP Bridge em {0}.
 Registou-se demasiadas vezes no XMPP/AP Bridge e excedeu o limite máximo de {0}.
+O número máximo de utilizadores registados permitidos é {0}.
 Desculpe, mas o número máximo de utilizadores registados no XMPP/AP Bridge foi atingido.
 Registou-se com êxito no XMPP/AP Bridge.
 Lamentamos, mas os registos no XMPP/AP Bridge estão atualmente encerrados.

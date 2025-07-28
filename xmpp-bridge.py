@@ -3,6 +3,7 @@
 #################################
 
 import os
+from argparse import ArgumentParser
 from mastodon import Mastodon, StreamListener, MastodonError
 from lib_bridge import UserRegistrar, LanguageManager, ParseSend, InitBridge, ConfigLoader, LogError
 
@@ -59,7 +60,10 @@ class Listener(StreamListener): # Callback function to process notifications
 
 if __name__ == '__main__':
 
-    config = ConfigLoader(CONFIG_FILE)
+    parser = ArgumentParser(description = "XMPP/AP Bridge - Mastodon bot")
+    parser.add_argument("-c", "--config", help="specify configuration file path and name")
+    args = parser.parse_args()
+    config = ConfigLoader(args.config if args.config else CONFIG_FILE)
     config.load()
 
     mastodon = Mastodon(access_token = config.xmpp_bridge_token, api_base_url = config.ap_instance, user_agent = config.user_agent)

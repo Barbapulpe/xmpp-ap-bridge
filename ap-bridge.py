@@ -4,6 +4,7 @@
 
 from time import sleep
 import os
+from argparse import ArgumentParser
 import asyncio
 import slixmpp
 from lib_bridge import UserRegistrar, UserManager, LanguageManager, ParseSend, InitBridge, ConfigLoader, LogError
@@ -92,7 +93,10 @@ class BridgeBot(slixmpp.ClientXMPP):
 
 if __name__ == '__main__':
 
-    config = ConfigLoader(CONFIG_FILE)
+    parser = ArgumentParser(description = "XMPP/AP Bridge - XMPP bot")
+    parser.add_argument("-c", "--config", help="specify configuration file path and name")
+    args = parser.parse_args()
+    config = ConfigLoader(args.config if args.config else CONFIG_FILE)
     config.load()
 
     InitBridge(None, 1, config).initialize()

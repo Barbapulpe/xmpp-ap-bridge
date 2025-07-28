@@ -63,6 +63,7 @@ Entschuldigung, aber Ihre Instanz/Ihr Server ist für die XMPP/AP-Bridge-Registr
 Ihr(e) Instanz/Server steht leider nicht auf der grünen Liste für die XMPP/AP-Bridge-Registrierung.
 Sie haben sich bereits bei XMPP/AP-Bridge auf {0} registriert.
 Sie haben sich zu oft bei der XMPP/AP-Bridge registriert und die maximale Anzahl von {0} überschritten.
+Die maximal zulässige Anzahl registrierter Benutzer beträgt {0}.
 Leider wurde die maximale Anzahl registrierter Benutzer für XMPP/AP Bridge erreicht.
 Sie haben sich erfolgreich bei der XMPP/AP-Bridge registriert.
 Leider sind die Anmeldungen zur XMPP/AP Bridge derzeit geschlossen.

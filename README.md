@@ -1,5 +1,5 @@
 # XMPP/ActivityPub Bridge
-# Chat between XMPP and the Fediverse
+## Chat between XMPP and the Fediverse
 
 ![banner-fedi2xmpp](https://github.com/user-attachments/assets/664e972c-e2f8-4e03-8e02-07156fc023e9)
 
@@ -15,7 +15,7 @@ From a user standpoint: nothing to install, nothing to configure, just communica
 
 A server (VPS with SSH access) running Python version 3.10 is required for the backend (specific syntax in the code is not compatible with lower versions).
 
-It is also required to create a bot account on a Mastodon server (or another Fediverse server if it use Mastodon-compatible API's, untested). This server can be any server but you need to check that it allows for bot accounts.
+It is also required to create a bot account on a Mastodon server. This server can be any server but you need to check that it allows for bot accounts.
 
 Finally, it is required to create a bot account on a XMPP server. Just the same, this server can be any server but you need to check that it allows for bot accounts.
 
@@ -108,7 +108,11 @@ You can use environment variables for locating the configuration file and for th
 
 ### Configuration file
 
-The configuration file, of which a sample is provided in the `config/` directory of the project, is thoroughly documented and allows for fine-grained customization.
+The configuration file, of which a sample is provided in the `config/` directory of the project, is thoroughly documented and allows for fine-grained customization. You should copy the sample file to your destination folder and then edit it to your liking with your favourite text editor, as an example:
+```
+$ cp config/xmpp-bridge-config.yml.sample /your/destination/folder/xmpp-bridge-config.yml
+$ nano -w xmpp-bridge-config.yml
+```
 
 If you choose to store the credentials there, make sure permissions are restricted with `chmod 600 /path/to/config/file/filename.yml`
 
@@ -125,8 +129,14 @@ Any changes made to the configuration file needs restarting the backend for both
 
 Once all is configured, you are ready to start the backend so the two bots start listening to events and dealing with messages.
 
-If using a linux distribution based on systemd, you can copy the two files provided in the `dist/` directory to `/etc/systemd/system/` (on Ubuntu), edit them to adapt to your own system (linux user and paths), and start both services as root (or using `sudo`):
+If using a linux distribution based on systemd, you can copy the two files provided in the `dist/` directory to `/etc/systemd/system/` (on Ubuntu) and edit them to adapt to your own system:
+- Change to the `bridgeuser` user and group defined above.
+- Adapt paths and filenames (`.env` file if used, and executables).
+- You can run each executable with an option `-c` or `--config` parameter specifying the path and filename of your configuration file (this would override the environment variable if set).
+
+Then start both services as root (or using `sudo`):
 ```
+# systemctl daemon-reload
 # systemctl enable --now ap-bridge
 # systemctl enable --now xmpp-bridge
 ```
@@ -143,7 +153,7 @@ On the first run, the Bridge will create and initialize all required files and d
 
 ### Design advantages and limitations
 
-The architecture is simple: one bot listens for events from the Fediverse, the other for events from XMPP. The protocol and server queue management is all done from the servers hosting the bots. After parsing the text for commands and/or recipients, messages are either answered to or echoed to the other world. Several languages are supported and more can easily be added.
+The architecture is simple: one bot listens for events from the Fediverse, the other for events from XMPP. The protocol and server queue management is all done from the servers hosting the bots. After parsing the text for commands and/or recipients, messages are either answered to or echoed to the other world. Several languages are supported and more can easily be added (just drop an additional `xx.txt` file in the appropriate directory, see comments in configuration files).
 
 This has the following advantages: simple for users (I tried to make the mention system as intuitive as possible), who can use their usual account and application.
 
@@ -155,7 +165,7 @@ This is why you are encouraged to deploy your own Bridge if you intend to use it
 
 ### Privacy considerations
 
-Fediverse does not support end-to-end encryption (E2EE). Therefore with this design, it was not possible to implement E2EE from XMPP, so all messages are sent and received in clear text. It doesn't mean they are publicly visible and in fact they are not: but they are just protected by access control rights, just as direct messages in Mastodon are, as an example.
+Fediverse does not support end-to-end encryption (E2EE). Therefore with this design, it was not possible to implement E2EE from XMPP, so all messages are sent and received in clear text. It doesn't mean they are publicly visible and in fact they are not: but they are simply protected by access control rights, just as direct messages in Mastodon are, as an example.
 
 As for any bridge which acts as a proxy to send and receive messages, this has the following implications:
 - Sender and receiver XMPP and Fediverse server administrators can read messages (as with any other non-encrypted message).
@@ -168,7 +178,7 @@ The most privacy-friendly scenario would be: you are running a Mastodon server a
 
 ### Technical insights
 
-The philosophy behind the design is *KISS*: "Keep It Simple, Stupid". Simple means robust. But also some choices had to be made, with the user experience in mind, this is why we only rely on chat messages using client bots (no server component nor Pubsub nor MUC).
+The philosophy behind the design is *KISS*: "Keep It Simple, Stupid". Simple means robust. But also some choices had to be made, with the user experience in mind, this is why we only rely on chat messages using client bots (no server component, nor Pubsub, nor MUC).
 
 For communicating on XMPP side, we use the asynchronous slixmpp library. For the Mastodon side, we use the Mastodon.py library which relies on API calls to the Mastodon instance.
 
@@ -176,7 +186,7 @@ No crawling to other servers is done, only calls to the two servers hosting the 
 
 Each bot listens to incoming messages and notifications, and calls the shared library to process events and parse the messages for commands. A second temporary connection will be initiated when sending a message from one of the two bots directly to the user in the other world.
 
-User registration, blocklists and communication ID's are all managed in a local database, we do not use blocking of accounts from the bots themselves. Messages' ID's are necessary to collect to manage the "reply / send again" feature, as all communications appear to be with/from the bots from the user perspective, so we need to register the upstream message ID. All such ID's and metadata are deleted after the configured retention period.
+User registration, blocklists and communication ID's are all managed in a local database, we do not use blocking of accounts from the bots themselves. Messages' ID's are collected to manage the "reply / send again" feature, as all communications appear to be with/from the bots from the user perspective, so we need to register the upstream message ID. All such ID's and metadata are deleted after the configured retention period.
 
 As an exception, blocked domain lists are stored in files rather than database: this is to allow for manual editing or importing of lists of domains, although everything can be managed using bot commands.
 
@@ -193,6 +203,10 @@ Moderation and protection against abuse are an important feature of this Bridge.
 User and administrator guides are available in each supported language and referred to in the bot help command, the English version of the user guide is available [here](https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/bridge-from-xmpp-to-fediverse-user-help-page-59dlkf)
 
 The full documentation index for all languages is available [here](https://chat.gayfr.online/blog/ap_bridge%40gayfr.live/xmpp-activitypub-bridge-documentation-KdpNJ9)
+
+## Try it out!
+
+If you want to try a working implementation, you can use ours, by contacting either [@xmpp_bridge@gayfr.social](https://gayfr.social/@xmpp_bridge) from the Fediverse, or xmpp:ap_bridge@gayfr.live from XMPP. Any feedback appreciated!
 
 ## License
 

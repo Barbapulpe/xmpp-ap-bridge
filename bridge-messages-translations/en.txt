@@ -63,6 +63,7 @@ Sorry but your instance/server is red listed for XMPP/AP bridge registration.
 Sorry but your instance/server is not on the green list for XMPP/AP bridge registration.
 You already registered to XMPP/AP bridge on {0}.
 You registered too many times to XMPP/AP bridge and exceeded the maximum limit of {0}.
+The maximum number of allowed registered users is {0}.
 Sorry but the maximum number of registered users to XMPP/AP Bridge has been reached.
 You registered successfully to XMPP/AP bridge.
 Sorry but registrations to XMPP/AP Bridge are currently closed.

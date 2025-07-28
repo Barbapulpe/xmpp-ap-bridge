@@ -2,7 +2,7 @@
 # XMPP/AP Bridge Main Libraries #
 #################################
 
-VERSION = "0.7.0"
+VERSION = "0.7.1"
 
 
 import sqlite3
@@ -86,9 +86,10 @@ class ConfigLoader:
         self.green_mode = self._config_list["greenlist-mode"]
         self.max_reg = self._config_list["max-ap-registrations"]
         self.max_reg_users = self._config_list["max-reg-users"]
-        self.max_dest = self._config_list["max-dest-to-send"]
+        self.max_dest = max(self._config_list["max-dest-to-send"], 1) # Do not allow 0 as a value
         self.max_reply = self._config_list["max-minutes-for-reply"]
         self.max_rate = self._config_list["max-user-rate"]
+        if self.max_rate: self.max_dest = min(self.max_dest, self.max_rate) # Do not allow more dest than rate
         self.retention = self._config_list["max-retention-days-revoked-user"]
         self.comm_limit = self._config_list["comm-max-limit-days"]
         self.silent_block = self._config_list["silent-block"]
@@ -96,6 +97,7 @@ class ConfigLoader:
         self.account_locked = False
         self.help_url = self._config_list["help-url"]
         self.ahelp_url = self._config_list["ahelp-url"]
+        self.version = VERSION
 
     def _get_instance_settings(self):
         try:
@@ -484,7 +486,7 @@ class UserRegistrar:
             if entry[5] == None and entry[3]:
                 if not self.from_follow: self.reply_text = self._messages["dbexists"][self.lang].format(entry[2].strftime("%F"))
                 self.success = True
-            elif entry[3] >= self._max_reg: self.reply_text = self._messages["regmax"][self.lang].format(self._max_reg)
+            elif self._max_reg and entry[3] >= self._max_reg: self.reply_text = self._messages["regmax"][self.lang].format(self._max_reg)
             else:
                 c.execute("UPDATE users SET req_date = ?, nb_reg = ?, lang = ?, revoke_date = ? WHERE (type, req_user) = (?, ?)",
                           (datetime.now(), entry[3] + 1, self.lang, None, self.user_type, self.user_from))
@@ -602,6 +604,7 @@ class InstructionProcessor:
         self._ap_instance = config.ap_instance
         self._command_list = config.command_list
         self._green_mode = config.green_mode
+        self._max_reg_users = config.max_reg_users
         self._char_limit = config.char_limit
         self._log_file = config.log_file
         self._help_url = config.help_url
@@ -627,6 +630,7 @@ class InstructionProcessor:
         with open(self._open_file) as f:
             opened = f.read().strip()
         response += "- " + self._messages[opened][self.lang]
+        if opened == self._command_list[20] and self._max_reg_users: response += "- " + self._messages["nbregusers"][self.lang].format(self._max_reg_users)
         response += "- " + (self._messages["notgreenlist"][self.lang], self._messages["greenlist"][self.lang])[self._green_mode]
         return response
 
@@ -1023,11 +1027,11 @@ class MessageSender:
                 conn.close()
 
                 now = datetime.now() # Now check which is the most recent (reply or second send) and whether we are below the maximum time threshold
-                if entry1 and (not entry2 or entry1[3] > entry2[0][3]) and now - entry1[3] < timedelta(minutes=self._max_reply):
+                if entry1 and (not entry2 or entry1[3] > entry2[0][3]) and (not self._max_reply or now - entry1[3] < timedelta(minutes=self._max_reply)):
                     self._user_to_list = [entry1[2]] # Case of a reply: one recipient
                     self.reply_id = entry1[4]
                     is_reply = True
-                elif entry2 and now - entry2[0][3] < timedelta(minutes=self._max_reply): # We have found recent enough previous communication, now build list of recipients
+                elif entry2 and (not self._max_reply or now - entry2[0][3] < timedelta(minutes=self._max_reply)): # Found recent enough previous communication, now build list of recipients
                     ident = entry2[0][4] # Case of a resend: build the list of same recipients (same ident as it is a single message when from XMPP)
                     self._user_to_list = [x[1] for x in entry2 if x[4] == ident]
                 else: self.reply_text = self._messages["noaddr1"][self.lang].format(self._pfix[1-self.user_type], self._max_reply, self._pfix[2], self._command_list[3])
@@ -1159,7 +1163,7 @@ class InitBridge:
         c.execute("SELECT * FROM users WHERE type = ? AND revoke_date IS NOT NULL", (self.type,))
         entry = c.fetchall()
         for e in entry: # Delete all data regarding revoked users after retention period
-            if datetime.now() - e[5] > timedelta(days=self._retention):
+            if self._retention and datetime.now() - e[5] > timedelta(days=self._retention):
                 c.execute("DELETE FROM users WHERE (type, req_user) = (?, ?)", (self.type, e[1]))
                 c.execute("DELETE FROM blocks WHERE (type, blocking) = (?, ?)", (self.type, e[1]))
                 c.execute("DELETE FROM comm WHERE (type, user) = (?, ?)", (self.type, e[1]))
@@ -1168,7 +1172,7 @@ class InitBridge:
         c.execute("SELECT * FROM comm WHERE type = ?", (self.type,))
         entry = c.fetchall()
         for e in entry: # Delete all communication data after retention period anyway
-            if datetime.now() - e[3] > timedelta(days=self._comm_limit):
+            if self._comm_limit and datetime.now() - e[3] > timedelta(days=self._comm_limit):
                 c.execute("DELETE FROM comm WHERE type = ?", (self.type,))
 
         conn.commit()
@@ -1189,7 +1193,7 @@ class InitBridge:
             except MastodonError: pass
 
         self._check_and_initialize_file(self._start_file, self._command_list[7]) # Create start / open / redlist / greenlist files if they do not exist
-        self._check_and_initialize_file(self._open_file, self._command_list[21]) # By default, bridge initializes as closed registration
+        self._check_and_initialize_file(self._open_file, self._command_list[20]) # By default, bridge initializes as opened registration
         self._check_and_initialize_file(self._dred_file,
             "# XMPP/AP Bridge list of domains red listed for all users (Fediverse and XMPP)\n" +
             "# Red list always has higher priority on green list\n" +
