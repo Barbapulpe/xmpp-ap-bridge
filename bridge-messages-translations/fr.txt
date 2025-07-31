@@ -8,11 +8,11 @@ Le bridge XMPP/AP est ouvert pour de nouvelles inscriptions.
 Le bridge XMPP/AP est fermé aux nouvelles inscriptions.
 Le bridge XMPP/AP est paramétré en mode liste verte.
 Le bridge XMPP/AP n'est pas paramétré en mode liste verte.
-Le bridge XMPP/AP est opérationnel avec le statut suivant :
+Le bridge XMPP/AP (version {0}) est opérationnel avec le statut suivant :
 Désolé, cette commande n'est disponible que pour les administrateurs.
 Désolé, le bridge XMPP/AP est momentanément indisponible pour envoyer des messages, veuillez réessayer ultérieurement.
 Désolé, vous ne pouvez définir qu'une seule langue à la fois, essayez à nouveau.
-Désolé, la langue {0} n'est pas supportée pour le moment.
+Désolé, la langue '{0}' n'est pas supportée pour le moment. Choix possibles : {1}.
 Vous devez d'abord vous enregistrer avant de définir une langue par défaut.
 Désolé, vous ne pouvez exécuter qu'une seule commande à la fois, veuillez réessayer.
 Commande non reconnue, veuillez réessayer.

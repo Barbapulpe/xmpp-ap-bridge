@@ -8,11 +8,11 @@ XMPP/AP Bridge está abierto para nuevos registros de usuarios.
 XMPP/AP Bridge está cerrado para nuevos registros de usuarios.
 XMPP/AP Bridge está configurado en modo de lista verde.
 XMPP/AP Bridge no está configurado en modo de lista verde.
-XMPP/AP Bridge está operativo, con el siguiente estado:
+XMPP/AP Bridge (versión {0}) está operativo, con el siguiente estado:
 Lo sentimos, este comando sólo está disponible si eres administrador.
 Lo sentimos, XMPP/AP Bridge no está disponible para enviar mensajes en este momento, inténtelo más tarde.
 Lo sentimos, sólo se puede establecer un idioma a la vez, por favor inténtelo de nuevo.
-Lo sentimos, el idioma {0} no está soportado en este momento.
+Lo sentimos, el idioma '{0}' no está soportado en este momento. Posibles opciones: {1}.
 Debe registrarse antes de establecer un idioma por defecto.
 Lo sentimos, sólo puede ejecutar un comando a la vez, por favor inténtelo de nuevo.
 Comando no reconocido, por favor inténtelo de nuevo.

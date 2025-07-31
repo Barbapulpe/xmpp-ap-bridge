@@ -2,7 +2,7 @@
 # XMPP/AP Bridge Main Libraries #
 #################################
 
-VERSION = "0.7.1"
+VERSION = "0.7.2"
 
 
 import sqlite3
@@ -248,7 +248,7 @@ class LanguageProcessor:
         elif self.lang_list:
             self.reply_lang = self.lang_list[0]
             if self.reply_lang not in self._language_list:
-                self.reply_text = self._messages["unknownlang"][self.current_lang].format(self.reply_lang)
+                self.reply_text = self._messages["unknownlang"][self.current_lang].format(self.reply_lang, str(self._language_list)[1:-1])
                 self.reply_lang = self._unknown_lang
             self.reply_text += self._set_language()
 
@@ -290,7 +290,8 @@ class ContentParser:
                     a_tag.string = a_tag.text + "@" + parsed_url.netloc if parsed_url.netloc else self._ap_instance + " "
 
             for br in parsed_html.find_all("br"): br.replace_with("\n")
-            self.parsed = parsed_html.get_text()
+            for p in parsed_html.find_all("p"): p.replace_with(p.text + "\n")
+            self.parsed = parsed_html.get_text(separator="\n") # All this to get it right in Mastodon, Pixelfed and Friendica
 
         # Extract commands
         self.command_list = list(set(
@@ -609,6 +610,7 @@ class InstructionProcessor:
         self._log_file = config.log_file
         self._help_url = config.help_url
         self._ahelp_url = config.ahelp_url
+        self._version = config.version
         self.lang = lang
         self.reply_text = ""
 
@@ -623,7 +625,7 @@ class InstructionProcessor:
         return self._messages[self._com[0]][self.lang]
 
     def _status(self): # Return bridge status: send messages allowed or not, registrations open or not
-        response = self._messages["status"][self.lang]
+        response = self._messages["status"][self.lang].format(self._version)
         with open(self._start_file) as f:
             start = f.read().strip()
         response += "- " + self._messages[start][self.lang]

@@ -8,11 +8,11 @@ XMPP/AP Bridge is geopend voor nieuwe gebruikersregistraties.
 XMPP/AP Bridge is gesloten voor nieuwe gebruikersregistraties.
 XMPP/AP Bridge is ingesteld op groene lijstmodus.
 XMPP/AP Bridge is niet ingesteld op groene lijstmodus.
-XMPP/AP Bridge is operationeel, met de volgende status:
+XMPP/AP Bridge (versie {0}) is operationeel, met de volgende status:
 Sorry, deze opdracht is alleen beschikbaar als u een beheerder bent.
 Sorry, XMPP/AP Bridge is momenteel niet beschikbaar voor het verzenden van berichten. Probeer het later nog eens.
 Sorry, u kunt slechts één taal per keer instellen, probeer het opnieuw.
-Sorry, de taal {0} wordt momenteel niet ondersteund.
+Sorry, de taal '{0}' wordt momenteel niet ondersteund. Mogelijke keuzes: {1}.
 Je moet je eerst registreren voordat je een standaardtaal kunt instellen.
 Sorry, je kunt maar één commando tegelijk uitvoeren, probeer het opnieuw.
 Niet herkend commando, probeer opnieuw.

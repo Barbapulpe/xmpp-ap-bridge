@@ -8,11 +8,11 @@ XMPP/AP Bridge is opened for new user registrations.
 XMPP/AP Bridge is closed for new user registrations.
 XMPP/AP Bridge is set to greenlist mode.
 XMPP/AP Bridge is not set to greenlist mode.
-XMPP/AP Bridge is operational, with the following status:
+XMPP/AP Bridge (version {0}) is operational, with the following status:
 Sorry, this command is only available if you are an administrator.
 Sorry, XMPP/AP Bridge is unavailable to send messages at the moment, try again later.
 Sorry, you can only set one language at a time, please try again.
-Sorry, the language {0} is unsupported at the moment.
+Sorry, the language '{0}' is unsupported at the moment. Possible choices: {1}.
 You need to register first before setting a default language.
 Sorry, you can only execute one command at a time, please try again.
 Unrecognized command, please try again.

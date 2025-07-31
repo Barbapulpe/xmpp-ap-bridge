@@ -8,11 +8,11 @@ XMPP/AP-Bridge ist für neue Benutzerregistrierungen geöffnet.
 XMPP/AP-Bridge ist für neue Benutzerregistrierungen geschlossen.
 XMPP/AP-Bridge ist für den Modus „Grüne Liste“ definiert.
 XMPP/AP-Bridge ist nicht für den Modus „Grüne Liste“ definiert.
-XMPP/AP-Bridge ist betriebsbereit, mit dem folgenden Status:
+XMPP/AP-Bridge (Version {0}) ist betriebsbereit, mit dem folgenden Status:
 Entschuldigung, dieser Befehl ist nur verfügbar, wenn Sie ein Administrator sind.
 Entschuldigung, XMPP/AP Bridge ist im Moment nicht verfügbar, um Nachrichten zu senden, versuchen Sie es später noch einmal.
 Entschuldigung, Sie können immer nur eine Sprache einstellen, bitte versuchen Sie es erneut.
-Entschuldigung, die Sprache {0} wird im Moment nicht unterstützt.
+Entschuldigung, die Sprache '{0}' wird im Moment nicht unterstützt. Mögliche Auswahlmöglichkeiten: {1}.
 Sie müssen sich erst registrieren, bevor Sie eine Standardsprache einstellen können.
 Entschuldigung, Sie können immer nur einen Befehl ausführen, bitte versuchen Sie es noch einmal.
 Unbekannter Befehl, bitte versuchen Sie es noch einmal.
