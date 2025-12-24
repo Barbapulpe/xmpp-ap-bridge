@@ -2,7 +2,7 @@
 # XMPP/AP Bridge Main Libraries #
 #################################
 
-VERSION = "0.7.3"
+VERSION = "0.7.4"
 
 
 import sqlite3
@@ -430,7 +430,8 @@ class UserRegistrar:
             account = self.instance.account_lookup(self.user_from)
             acc_id = account.id
             bio = account.note.lower()
-            if "#<span>nobot</span>" in bio or "#<span>nobridge</span>" in bio: return self._messages["hashnobot"][self.lang], self.lang, acc_id
+            hashtags = ["#<span>nobot</span>", "#<span>nobots</span>", "#<span>nobridge</span>"]
+            if any(ht in bio for ht in hashtags): return self._messages["hashnobot"][self.lang], self.lang, acc_id
             if account.bot: return self._messages["nobot"][self.lang], self.lang, acc_id
             if account.group: return self._messages["nogroup"][self.lang], self.lang, acc_id
             try:
