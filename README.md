@@ -96,7 +96,12 @@ Then you will need to restart both bots. Run as root (or using `sudo`):
 
 ### Environment variables
 
-You can use environment variables for locating the configuration file and for the bot accounts credentials. These can be set in the `.env` file, and if storing credentials, permissions should be restricted with `chmod 600 .env` whilst deleting unused lines in the `.env` file.
+You can use environment variables for locating the configuration file and for the bot accounts credentials. These can be set in the `.env` file, of which an example is provided in the main directory of the project. You should copy the sample file to your destination folder and then edit it, and if storing credentials, permissions should be restricted with `chmod 600 .env` whilst deleting unused lines in the `.env` file:
+```
+$ cp .env.example /your/destination/folder/.env
+$ nano -w .env
+$ chmod 600 .env
+```
 
 | Environment variable | Details |
 | --- | --- |
@@ -108,9 +113,9 @@ You can use environment variables for locating the configuration file and for th
 
 ### Configuration file
 
-The configuration file, of which a sample is provided in the `config/` directory of the project, is thoroughly documented and allows for fine-grained customization. You should copy the sample file to your destination folder and then edit it to your liking with your favourite text editor, as an example:
+The configuration file, of which an example is provided in the `config/` directory of the project, is thoroughly documented and allows for fine-grained customization. You should copy the sample file to your destination folder and then edit it to your liking with your favourite text editor:
 ```
-$ cp config/xmpp-bridge-config.yml.sample /your/destination/folder/xmpp-bridge-config.yml
+$ cp config/xmpp-bridge-config.yml.example /your/destination/folder/xmpp-bridge-config.yml
 $ nano -w xmpp-bridge-config.yml
 ```
 
