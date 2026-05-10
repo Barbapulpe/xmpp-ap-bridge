@@ -27,7 +27,7 @@ class Listener(StreamListener): # Callback function to process notifications
             try:
                 if notification.type == "follow_request":
                     mastodon.follow_request_authorize(register.id) if register.success else mastodon.follow_request_reject(register.id)
-                mastodon.status_post(f'@{user_from} \n{register.reply_text}', language = register.lang, visibility="direct")
+                mastodon.status_post(f'@{user_from} \n{register.reply_text}', language = register.lang, visibility="direct", quote_approval_policy="nobody")
             except MastodonError as e:
                 LogError(config.log_file, f">> Error when processing Fediverse follow request to user @{user_from} from XMPP Bridge", e).log()
 
@@ -53,7 +53,7 @@ class Listener(StreamListener): # Callback function to process notifications
 
             if parser.response: # Reply to Fediverse sender only if error or command returns a message
                 try:
-                    mastodon.status_post(f'@{user_from} \n{parser.response}', in_reply_to_id = from_id, visibility="direct")
+                    mastodon.status_post(f'@{user_from} \n{parser.response}', in_reply_to_id = from_id, visibility="direct", quote_approval_policy="nobody")
                 except MastodonError as e:
                     LogError(config.log_file, f">> Error when responding to Fediverse user @{user_from} from XMPP Bridge", e).log()
 
