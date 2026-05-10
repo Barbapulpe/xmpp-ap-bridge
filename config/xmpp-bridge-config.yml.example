@@ -77,6 +77,10 @@ greenlist-mode: False
 # Can be disabled by setting to 0
 max-reg-users: 100
 
+# Threshold % of max-reg-users to register (if exceeded, new registrations will send a warning message to XMPP admin)
+# Can be disabled by setting to 0, must be between 0 and 100
+threshold-reg-users: 90
+
 # Minimum number of posts expected from an account applying for registration from Fediverse (to avoid spam and junk accounts)
 # green listed domains skip this check, or you can set to 0 to disable completely
 min-ap-activity-posts: 5
