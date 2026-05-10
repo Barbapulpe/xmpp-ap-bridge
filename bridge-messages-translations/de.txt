@@ -7,7 +7,7 @@ XMPP/AP-Bridge ist für das Senden von Nachrichten gesperrt.
 XMPP/AP-Bridge ist für neue Benutzerregistrierungen geöffnet.
 XMPP/AP-Bridge ist für neue Benutzerregistrierungen geschlossen.
 XMPP/AP-Bridge ist für den Modus „Grüne Liste“ definiert.
-XMPP/AP-Bridge ist nicht für den Modus „Grüne Liste“ definiert.
+XMPP/AP-Bridge ist für den Modus „Rote Liste“ definiert.
 XMPP/AP-Bridge (Version {0}) ist betriebsbereit, mit dem folgenden Status:
 Entschuldigung, dieser Befehl ist nur verfügbar, wenn Sie ein Administrator sind.
 Entschuldigung, XMPP/AP Bridge ist im Moment nicht verfügbar, um Nachrichten zu senden, versuchen Sie es später noch einmal.
@@ -63,8 +63,9 @@ Entschuldigung, aber Ihre Instanz/Ihr Server ist für die XMPP/AP-Bridge-Registr
 Ihr(e) Instanz/Server steht leider nicht auf der grünen Liste für die XMPP/AP-Bridge-Registrierung.
 Sie haben sich bereits bei XMPP/AP-Bridge auf {0} registriert.
 Sie haben sich zu oft bei der XMPP/AP-Bridge registriert und die maximale Anzahl von {0} überschritten.
-Die maximal zulässige Anzahl registrierter Benutzer beträgt {0}.
+Die Anzahl der registrierten Benutzer beträgt {0} von maximal {1}.
 Leider wurde die maximale Anzahl registrierter Benutzer für XMPP/AP Bridge erreicht.
+Achtung, der Schwellenwert von {0}% wurde für die Anzahl der registrierten Benutzer erreicht.
 Sie haben sich erfolgreich bei der XMPP/AP-Bridge registriert.
 Leider sind die Anmeldungen zur XMPP/AP Bridge derzeit geschlossen.
 Ihr Konto wurde erfolgreich zu den XMPP/AP Bridge-Kontakten hinzugefügt.

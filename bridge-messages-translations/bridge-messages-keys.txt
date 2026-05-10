@@ -65,6 +65,7 @@ dbexists
 regmax
 nbregusers
 maxusers
+threshold
 regok
 closedreg
 addcontact

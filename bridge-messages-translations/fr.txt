@@ -7,7 +7,7 @@ L'envoi de messages par le bridge XMPP/AP est suspendu.
 Le bridge XMPP/AP est ouvert pour de nouvelles inscriptions.
 Le bridge XMPP/AP est fermé aux nouvelles inscriptions.
 Le bridge XMPP/AP est paramétré en mode liste verte.
-Le bridge XMPP/AP n'est pas paramétré en mode liste verte.
+Le bridge XMPP/AP est paramétré en mode liste rouge.
 Le bridge XMPP/AP (version {0}) est opérationnel avec le statut suivant :
 Désolé, cette commande n'est disponible que pour les administrateurs.
 Désolé, le bridge XMPP/AP est momentanément indisponible pour envoyer des messages, veuillez réessayer ultérieurement.
@@ -63,8 +63,9 @@ Désolé mais votre instance/serveur est en liste rouge pour les inscriptions su
 Désolé mais votre instance/serveur n'est pas sur la liste verte pour les inscriptions sur le bridge XMPP/AP.
 Vous êtes déjà enregistré sur le bridge XMPP/AP depuis le {0}.
 Vous vous êtes inscrit trop de fois sur le bridge XMPP/AP et vous avez dépassé la limite maximale de {0}.
-Le nombre maximum d'utilisateurs pouvant s'inscrire est de {0}.
+Le nombre d'utilisateurs inscrits est de {0} sur un maximum de {1}.
 Désolé mais le nombre maximum des inscriptions possibles sur le bridge XMPP/AP a été atteint.
+Attention, le seuil de {0}% a été atteint pour le nombre d'utilisateurs inscrits.
 Vous vous êtes inscrit avec succès sur le bridge XMPP/AP.
 Désolé mais les inscriptions sur le bridge XMPP/AP sont suspendues pour le moment.
 Votre compte a été ajouté avec succès aux contacts du bridge XMPP/AP.

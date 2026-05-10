@@ -7,7 +7,7 @@ XMPP/AP Bridge está suspendido para el envío de mensajes.
 XMPP/AP Bridge está abierto para nuevos registros de usuarios.
 XMPP/AP Bridge está cerrado para nuevos registros de usuarios.
 XMPP/AP Bridge está configurado en modo de lista verde.
-XMPP/AP Bridge no está configurado en modo de lista verde.
+XMPP/AP Bridge está configurado en modo de lista roja.
 XMPP/AP Bridge (versión {0}) está operativo, con el siguiente estado:
 Lo sentimos, este comando sólo está disponible si eres administrador.
 Lo sentimos, XMPP/AP Bridge no está disponible para enviar mensajes en este momento, inténtelo más tarde.
@@ -63,8 +63,9 @@ Lo sentimos, pero su instancia/servidor está en la lista roja para el registro 
 Lo sentimos, pero su instancia/servidor no está en la lista verde para el registro en XMPP/AP Bridge.
 Ya se ha registrado en XMPP/AP Bridge en {0}.
 Se ha registrado demasiadas veces en XMPP/AP Bridge y ha superado el límite máximo de {0}.
-El número máximo de usuarios registrados permitidos es {0}.
+El número de usuarios registrados es {0} de un máximo de {1}.
 Lo sentimos, pero se ha alcanzado el número máximo de usuarios registrados en XMPP/AP Bridge.
+Atención, se ha alcanzado el umbral del {0}% para el número de usuarios registrados.
 Se ha registrado correctamente en XMPP/AP Bridge.
 Lo sentimos, pero las inscripciones a XMPP/AP Bridge están actualmente cerradas.
 Su cuenta se ha añadido correctamente a los contactos de XMPP/AP Bridge.
