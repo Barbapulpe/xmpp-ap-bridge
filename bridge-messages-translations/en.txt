@@ -65,7 +65,7 @@ You already registered to XMPP/AP bridge on {0}.
 You registered too many times to XMPP/AP bridge and exceeded the maximum limit of {0}.
 The number of registered users is {0} out of a maximum of {1}.
 Sorry but the maximum number of registered users to XMPP/AP Bridge has been reached.
-Warning, the threshold of {0}% for the number of registered users has been reached.
+Warning, the threshold of {0}% for the number of registered users to XMPP/AP Bridge has been reached.
 You registered successfully to XMPP/AP bridge.
 Sorry but registrations to XMPP/AP Bridge are currently closed.
 Your account was successfully added to XMPP/AP Bridge contacts.

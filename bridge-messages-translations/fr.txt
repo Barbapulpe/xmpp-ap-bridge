@@ -13,7 +13,7 @@ Désolé, cette commande n'est disponible que pour les administrateurs.
 Désolé, le bridge XMPP/AP est momentanément indisponible pour envoyer des messages, veuillez réessayer ultérieurement.
 Désolé, vous ne pouvez définir qu'une seule langue à la fois, essayez à nouveau.
 Désolé, la langue '{0}' n'est pas supportée pour le moment. Choix possibles : {1}.
-Vous devez d'abord vous enregistrer avant de définir une langue par défaut.
+Vous devez d'abord vous inscrire avant de définir une langue par défaut.
 Désolé, vous ne pouvez exécuter qu'une seule commande à la fois, veuillez réessayer.
 Commande non reconnue, veuillez réessayer.
 Aucun message n'est envoyé à un utilisateur après une commande, veuillez réessayer sans.
@@ -61,11 +61,11 @@ Vous ne pouvez pas bloquer les comptes administrateur ni les comptes robots, com
 Désolé, votre compte est en liste bloquée pour les inscriptions sur le bridge XMPP/AP.
 Désolé mais votre instance/serveur est en liste rouge pour les inscriptions sur le bridge XMPP/AP.
 Désolé mais votre instance/serveur n'est pas sur la liste verte pour les inscriptions sur le bridge XMPP/AP.
-Vous êtes déjà enregistré sur le bridge XMPP/AP depuis le {0}.
+Vous êtes déjà inscrit sur le bridge XMPP/AP depuis le {0}.
 Vous vous êtes inscrit trop de fois sur le bridge XMPP/AP et vous avez dépassé la limite maximale de {0}.
 Le nombre d'utilisateurs inscrits est de {0} sur un maximum de {1}.
 Désolé mais le nombre maximum des inscriptions possibles sur le bridge XMPP/AP a été atteint.
-Attention, le seuil de {0}% a été atteint pour le nombre d'utilisateurs inscrits.
+Attention, le seuil de {0}% a été atteint pour le nombre d'utilisateurs inscrits sur le bridge XMPP/AP.
 Vous vous êtes inscrit avec succès sur le bridge XMPP/AP.
 Désolé mais les inscriptions sur le bridge XMPP/AP sont suspendues pour le moment.
 Votre compte a été ajouté avec succès aux contacts du bridge XMPP/AP.

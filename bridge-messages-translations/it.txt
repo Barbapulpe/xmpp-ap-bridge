@@ -65,7 +65,7 @@ Ci si è già registrati al bridge XMPP/AP su {0}.
 Ci si è registrati troppe volte al bridge XMPP/AP e si è superato il limite massimo di {0}.
 Il numero di utenti registrati è {0} su un massimo di {1}.
 Ci dispiace, ma è stato raggiunto il numero massimo di utenti registrati su XMPP/AP Bridge.
-Attenzione, è stata raggiunta la soglia del {0}% per il numero di utenti registrati.
+Attenzione, è stata raggiunta la soglia del {0}% per il numero di utenti registrati su XMPP/AP Bridge.
 La registrazione al bridge XMPP/AP è avvenuta con successo.
 Siamo spiacenti ma le registrazioni a XMPP/AP Bridge sono attualmente chiuse.
 Il vostro account è stato aggiunto con successo ai contatti di XMPP/AP Bridge.

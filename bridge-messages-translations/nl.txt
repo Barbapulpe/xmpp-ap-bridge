@@ -65,7 +65,7 @@ Je hebt je al geregistreerd voor XMPP/AP Bridge op {0}.
 Je hebt je te vaak geregistreerd bij XMPP/AP Bridge en hebt de maximumlimiet van {0} overschreden.
 Het aantal geregistreerde gebruikers is {0} van maximaal {1}.
 Sorry, maar het maximale aantal geregistreerde gebruikers voor XMPP/AP Bridge is bereikt.
-Let op, de drempel van {0}% is bereikt voor het aantal geregistreerde gebruikers.
+Let op, de drempel van {0}% is bereikt voor het aantal geregistreerde gebruikers voor XMPP/AP Bridge.
 U bent succesvol geregistreerd bij XMPP/AP Bridge.
 Sorry, maar registraties voor XMPP/AP Bridge zijn momenteel gesloten.
 Uw account is toegevoegd aan XMPP/AP Bridge-contacten.
