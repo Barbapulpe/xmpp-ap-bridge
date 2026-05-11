@@ -2,7 +2,7 @@
 # XMPP/AP Bridge Main Libraries #
 #################################
 
-VERSION = "0.7.4"
+VERSION = "0.8.0"
 
 
 import sqlite3
@@ -86,6 +86,7 @@ class ConfigLoader:
         self.green_mode = self._config_list["greenlist-mode"]
         self.max_reg = self._config_list["max-ap-registrations"]
         self.max_reg_users = self._config_list["max-reg-users"]
+        self.threshold_reg_users = min(self._config_list["threshold-reg-users"], 100) # Max is 100%
         self.max_dest = max(self._config_list["max-dest-to-send"], 1) # Do not allow 0 as a value
         self.max_reply = self._config_list["max-minutes-for-reply"]
         self.max_rate = self._config_list["max-user-rate"]
@@ -345,6 +346,9 @@ class UserRegistrar:
         self.lang = lang
         self.config = config
         self._ap_instance = config.ap_instance
+        self._ap_bridge_jid = config.ap_bridge_jid
+        self._ap_bridge_pass = config.ap_bridge_pass
+        self._xmpp_admin = config.xmpp_admin
         self._xmpp_instance = config.xmpp_instance
         self._messages = config.messages
         self._database_file = config.database_file
@@ -358,6 +362,7 @@ class UserRegistrar:
         self._min_active = config.min_active
         self._max_reg = config.max_reg
         self._max_reg_users = config.max_reg_users
+        self._threshold = config.threshold_reg_users
         self._user_agent = config.user_agent
         self.success = False
 
@@ -369,10 +374,29 @@ class UserRegistrar:
             c.close()
         return bool(entry)
 
-    def _is_closed(self): # Check if bridge is in "close" mode for registration
+    def _is_closed(self): # Check if bridge is in "closed" mode for registration
         with open(self._open_file) as f:
             opened = f.read().strip()
         return self._messages["closedreg"][self.lang] if opened == self._command_list[21] else ""
+
+    def _threshold_msg(self): # Registration threshold reached: send a message to XMPP admin
+        if not self._threshold or not self._max_reg_users or not self._xmpp_admin: return # If no threshold or XMPP admin not configured, don't send anything
+        with sqlite3.connect(self._database_file) as conn:
+            c = conn.cursor()
+            c.execute("SELECT * FROM users WHERE revoke_date IS NULL")
+            entry = c.fetchall()
+            c.close()
+        pc = int(100 * len(entry) / self._max_reg_users)
+        if pc >= self._threshold: # Send warning message if threshold exceeded
+            try:
+                if self.user_type == 0: # We come from Mastodon so we are in a synchronous flow
+                    xmpp = SendMsgBot(self._ap_bridge_jid, self._ap_bridge_pass, self._xmpp_admin[0], self._messages["threshold"][self.lang].format(pc), self.lang, self._log_file)
+                    xmpp.connect()
+                    asyncio.get_event_loop().run_until_complete(xmpp.disconnected)
+                else: # Coming from XMPP, we are already connected and in an async loop
+                    self.instance.send_message(mto=self._xmpp_admin[0], mbody=self._messages["threshold"][self.lang].format(pc))
+            except Exception as e:
+                LogError(self._log_file, f">> Error in posting to XMPP user {self._xmpp_admin[0]} from Bridge", e).log()
 
     def _max_reguser(self): # Check if user max registrations is reached
         m = False
@@ -381,7 +405,7 @@ class UserRegistrar:
             c.execute("SELECT * FROM users WHERE revoke_date IS NULL")
             entry = c.fetchall()
             c.close()
-            if entry and self._max_reg_users: m = bool(len(entry) >= self._max_reg_users)
+        if entry and self._max_reg_users: m = bool(len(entry) >= self._max_reg_users)
         return self._messages["maxusers"][self.lang] if m else ""
 
     def _add_to_contact(self): # Add user_from as a contact / follow of bot and check mutual status
@@ -497,7 +521,9 @@ class UserRegistrar:
                 self.success = True
             c.close()
             conn.close()
-            if self.success: self.reply_text += self._add_to_contact() or self._messages["errcontact"][self.lang]
+            if self.success:
+                self._threshold_msg() # Send message to XMPP admin if threshold reached
+                self.reply_text += self._add_to_contact() or self._messages["errcontact"][self.lang]
 
 
 # User unregistration (may be called from Mastodon, or XMPP asynchronously or synchronously)
@@ -625,7 +651,7 @@ class InstructionProcessor:
             f.write(self._com[0])
         return self._messages[self._com[0]][self.lang]
 
-    def _status(self): # Return bridge status: send messages allowed or not, registrations open or not
+    def _status(self): # Return bridge status: send messages allowed or not, registrations open or not, max and actual users, green / red list mode
         response = self._messages["status"][self.lang].format(self._version)
         with open(self._start_file) as f:
             start = f.read().strip()
@@ -633,7 +659,13 @@ class InstructionProcessor:
         with open(self._open_file) as f:
             opened = f.read().strip()
         response += "- " + self._messages[opened][self.lang]
-        if opened == self._command_list[20] and self._max_reg_users: response += "- " + self._messages["nbregusers"][self.lang].format(self._max_reg_users)
+        if opened == self._command_list[20] and self._max_reg_users:
+            with sqlite3.connect(self._database_file) as conn:
+                c = conn.cursor()
+                c.execute("SELECT * FROM users WHERE revoke_date IS NULL")
+                entry = c.fetchall()
+                c.close()
+            response += "- " + self._messages["nbregusers"][self.lang].format(len(entry), self._max_reg_users)
         response += "- " + (self._messages["notgreenlist"][self.lang], self._messages["greenlist"][self.lang])[self._green_mode]
         return response
 
@@ -1092,7 +1124,7 @@ class MessageSender:
                         try:
                             self._send_msg = "*** " + (self._messages["newmsg"], self._messages["answer"])[is_reply][self.lang].format(app, self.user_from) + self._send_msg
                             return_id = Mastodon(access_token=self._xmpp_bridge_token, api_base_url=self._ap_instance, user_agent=self._user_agent).status_post(
-                                self._send_msg, in_reply_to_id = self.reply_id, visibility = "direct", language = self.lang).id
+                                self._send_msg, in_reply_to_id = self.reply_id, visibility = "direct", quote_approval_policy = "nobody", language = self.lang).id
                         except MastodonError as e:
                             LogError(self._log_file, ">> Error in posting status from XMPP Bridge", e).log()
                         finally: # Finish by populating database with communication ID's
