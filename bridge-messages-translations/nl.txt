@@ -90,7 +90,7 @@ Er is een fout opgetreden bij het verzenden van het bericht naar Fediverse.
 Bericht succesvol verzonden naar {0}{1}
 Bericht succesvol verzonden naar Fediverse.
 XMPP/AP Bridge rapport verzonden door gebruiker {0}{1}
-Rapport kon niet naar XMPP/AP Bridge-beheerder worden verzonden (niet geconfigureerd).
+Rapport kon niet naar XMPP/AP Bridge-beheerder worden verzonden.
 Rapport met succes verzonden naar XMPP/AP Bridge-beheerder.
 Het maximale aantal berichten dat u kunt versturen is bereikt. Er is geen bericht verzonden. Probeer het over een tijdje opnieuw.
 Antwoord ontvangen van {0} gebruiker {1}

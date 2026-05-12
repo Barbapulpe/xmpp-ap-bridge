@@ -90,7 +90,7 @@ Si è verificato un errore durante il tentativo di inviare un messaggio a Fedive
 Messaggio inviato con successo a {0}{1}
 Messaggio inviato con successo a Fediverse.
 Rapporto XMPP/AP Bridge inviato dall'utente {0}{1}
-Non è stato possibile inviare un rapporto all'amministratore di XMPP/AP Bridge (non configurato).
+Non è stato possibile inviare un rapporto all'amministratore di XMPP/AP Bridge.
 Rapporto inviato con successo all'amministratore XMPP/AP Bridge.
 È stato raggiunto il limite massimo di invio messaggi. Nessun messaggio è stato inviato, riprova tra qualche istante.
 Risposta ricevuta dall'utente {0}{1}

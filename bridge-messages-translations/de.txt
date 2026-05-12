@@ -90,7 +90,7 @@ Bei dem Versuch, eine Nachricht an Fediverse zu senden, ist ein Fehler aufgetret
 Nachricht erfolgreich an {0}{1} gesendet
 Die Nachricht wurde erfolgreich an Fediverse gesendet.
 XMPP/AP-Bridge-Bericht von Benutzer {0}{1} gesendet
-Bericht konnte nicht an den XMPP/AP-Bridge-Administrator gesendet werden (nicht konfiguriert).
+Bericht konnte nicht an den XMPP/AP-Bridge-Administrator gesendet werden.
 Bericht erfolgreich an XMPP/AP-Bridge-Administrator gesendet.
 Die maximale Anzahl an Nachrichten, die Sie versenden können, wurde erreicht. Es wurde keine Nachricht versendet. Bitte versuchen Sie es in Kürze erneut.
 Antwort erhalten von {0} Benutzer {1}

@@ -90,7 +90,7 @@ Une erreur s'est produite en tentant d'envoyer un message au Fediverse.
 Message envoyé avec succès à {0}{1}
 Message envoyé avec succès au Fediverse.
 Signalement du bridge XMPP/AP reçu de l'utilisateur {0}{1}
-Le rapport n'a pas pu être envoyé à l'administrateur du bridge XMPP/AP (non configuré).
+Le rapport n'a pas pu être envoyé à l'administrateur du bridge XMPP/AP.
 Rapport envoyé avec succès à l'administrateur du bridge XMPP/AP.
 Le taux maximal pour envoyer des messages a été atteint pour vous. Aucun message n'a été envoyé, essayez à nouveau un peu plus tard.
 Réponse reçue de {0} de l'utilisateur {1}

@@ -90,7 +90,7 @@ Ocorreu um erro ao tentar enviar uma mensagem para o Fediverse.
 Mensagem enviada com sucesso para {0}{1}
 Mensagem enviada com sucesso para o Fediverse.
 Relatório do XMPP/AP Bridge enviado pelo utilizador {0}{1}
-Não foi possível enviar o relatório para o administrador do XMPP/AP Bridge (não configurado).
+Não foi possível enviar o relatório para o administrador do XMPP/AP Bridge.
 Relatório enviado com sucesso para o administrador do XMPP/AP Bridge.
 A taxa máxima para envio de mensagens foi atingida para si. Nenhuma mensagem foi enviada, tente novamente daqui a pouco.
 Resposta recebida do utilizador {0}{1}

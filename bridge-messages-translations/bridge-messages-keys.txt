@@ -90,7 +90,7 @@ errsendfedi
 oksend
 oksendfedi
 report
-xmppadminempty
+xmppadmnotsent
 reportok
 maxrate
 answer

@@ -90,7 +90,7 @@ An error occurred while attempting to send message to Fediverse.
 Message successfully sent to {0}{1}
 Message successfully sent to Fediverse.
 XMPP/AP Bridge report sent by user {0}{1}
-Report could not be sent to XMPP/AP Bridge administrator (not configured).
+Report could not be sent to XMPP/AP Bridge administrator.
 Report successfully sent to XMPP/AP Bridge administrator.
 The maximum rate for sending messages has been reached for you. No message was sent, please try again in a little while.
 Reply received from {0} user {1}
