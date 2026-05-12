@@ -2,7 +2,7 @@
 # XMPP/AP Bridge Main Libraries #
 #################################
 
-VERSION = "0.8.0"
+VERSION = "0.8.1"
 
 
 import sqlite3
@@ -388,13 +388,15 @@ class UserRegistrar:
             c.close()
         pc = int(100 * len(entry) / self._max_reg_users)
         if pc >= self._threshold: # Send warning message if threshold exceeded
+            adm_lg = LanguageManager(1, self._xmpp_admin[0], self.config)
+            adm_lg.get_language()
             try:
                 if self.user_type == 0: # We come from Mastodon so we are in a synchronous flow
-                    xmpp = SendMsgBot(self._ap_bridge_jid, self._ap_bridge_pass, self._xmpp_admin[0], self._messages["threshold"][self.lang].format(pc), self.lang, self._log_file)
+                    xmpp = SendMsgBot(self._ap_bridge_jid, self._ap_bridge_pass, self._xmpp_admin[0], self._messages["threshold"][adm_lg.lang].format(pc), adm_lg.lang, self._log_file)
                     xmpp.connect()
                     asyncio.get_event_loop().run_until_complete(xmpp.disconnected)
                 else: # Coming from XMPP, we are already connected and in an async loop
-                    self.instance.send_message(mto=self._xmpp_admin[0], mbody=self._messages["threshold"][self.lang].format(pc))
+                    self.instance.send_message(mto=self._xmpp_admin[0], mbody=self._messages["threshold"][adm_lg.lang].format(pc))
             except Exception as e:
                 LogError(self._log_file, f">> Error in posting to XMPP user {self._xmpp_admin[0]} from Bridge", e).log()
 
@@ -722,12 +724,19 @@ class InstructionProcessor:
         return response + "\n"
 
     def _report(self): # Report: send a message to XMPP admin
-        if not self._xmpp_admin: return self._messages["xmppadminempty"][self.lang]
-        send_msg = "> " + self._messages["report"][self.lang].format(self._pfix[self.user_type], self.user_from) + self._msg
+        with sqlite3.connect(self._database_file) as conn:
+            c = conn.cursor()
+            c.execute("SELECT * FROM instb WHERE (type, blocked) = (?, ?)", (self.user_type, self.user_from))
+            entry = c.fetchone()
+            c.close()
+        if entry or not self._xmpp_admin: return self._messages["xmppadmnotsent"][self.lang]
+        adm_lg = LanguageManager(1, self._xmpp_admin[0], self.config)
+        adm_lg.get_language()
+        send_msg = "> " + self._messages["report"][adm_lg.lang].format(self._pfix[self.user_type], self.user_from) + self._msg
         return_id = "0"
         try:
             if self.user_type == 0: # We come from Mastodon so we are in a synchronous flow
-                xmpp = SendMsgBot(self._ap_bridge_jid, self._ap_bridge_pass, self._xmpp_admin[0], send_msg, self.lang, self._log_file)
+                xmpp = SendMsgBot(self._ap_bridge_jid, self._ap_bridge_pass, self._xmpp_admin[0], send_msg, adm_lg.lang, self._log_file)
                 xmpp.connect()
                 asyncio.get_event_loop().run_until_complete(xmpp.disconnected)
                 return_id = xmpp.return_id
