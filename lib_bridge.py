@@ -1132,8 +1132,9 @@ class MessageSender:
                         return_id = "0" # Post just one message which mentions all non-blocked recipients
                         user_to_lg = LanguageManager(1-self.user_type, self._user_to_list[0], self.config)
                         user_to_lg.get_language()
+                        user_to_lang = self.lang if len(self._user_to_list) > 1 else user_to_lg.lang # Keep sender language if several recipients
                         try:
-                            send_msg_final = "*** " + (self._messages["newmsg"], self._messages["answer"])[is_reply][user_to_lg.lang].format(app, self.user_from) + self._send_msg
+                            send_msg_final = "*** " + (self._messages["newmsg"], self._messages["answer"])[is_reply][user_to_lang].format(app, self.user_from) + self._send_msg
                             return_id = Mastodon(access_token=self._xmpp_bridge_token, api_base_url=self._ap_instance, user_agent=self._user_agent).status_post(
                                 send_msg_final, in_reply_to_id = self.reply_id, visibility = "direct", quote_approval_policy = "nobody", language = self.lang).id
                         except MastodonError as e:
