@@ -736,7 +736,7 @@ class InstructionProcessor:
         return_id = "0"
         try:
             if self.user_type == 0: # We come from Mastodon so we are in a synchronous flow
-                xmpp = SendMsgBot(self._ap_bridge_jid, self._ap_bridge_pass, self._xmpp_admin[0], send_msg, adm_lg.lang, self._log_file)
+                xmpp = SendMsgBot(self._ap_bridge_jid, self._ap_bridge_pass, self._xmpp_admin[0], send_msg, self.lang, self._log_file)
                 xmpp.connect()
                 asyncio.get_event_loop().run_until_complete(xmpp.disconnected)
                 return_id = xmpp.return_id
@@ -1096,7 +1096,6 @@ class MessageSender:
 
             if s: # Sending user is (now) registered
                 app = self._get_app()
-                first_iter = True
                 for user_to in self._user_to_list:
                     if self.user_type == 1 and not self._is_reg(1-self.user_type, user_to): # If sending from XMPP and recipient not registered, remove from mention
                         self.reply_text += self._messages["isnotreg"][self.lang].format(self._pfix[1-self.user_type], user_to)
@@ -1111,10 +1110,11 @@ class MessageSender:
                         if b: self.reply_text += m # We are blocking or blocked, message to warn sender
                         else: # We are not blocked so go ahead and send message to XMPP from Fediverse, one user at a time (in this loop)
                             return_id = "0"
-                            if first_iter: self._send_msg = "> " + (self._messages["newmsg"], self._messages["answer"])[is_reply][self.lang].format(app, self.user_from) + self._send_msg
-                            first_iter = False
+                            user_to_lg = LanguageManager(1-self.user_type, user_to, self.config)
+                            user_to_lg.get_language()
+                            send_msg_final = "> " + (self._messages["newmsg"], self._messages["answer"])[is_reply][user_to_lg.lang].format(app, self.user_from) + self._send_msg
                             try:
-                                xmpp = SendMsgBot(self._ap_bridge_jid, self._ap_bridge_pass, user_to, self._send_msg, self.lang, self._log_file)
+                                xmpp = SendMsgBot(self._ap_bridge_jid, self._ap_bridge_pass, user_to, send_msg_final, self.lang, self._log_file)
                                 xmpp.connect()
                                 asyncio.get_event_loop().run_until_complete(xmpp.disconnected)
                                 return_id = xmpp.return_id
@@ -1130,10 +1130,12 @@ class MessageSender:
                     if len(self._send_msg) > self._char_limit: self.reply_text = self._messages["toolong"][self.lang].format(self._char_limit)
                     else:
                         return_id = "0" # Post just one message which mentions all non-blocked recipients
+                        user_to_lg = LanguageManager(1-self.user_type, self._user_to_list[0], self.config)
+                        user_to_lg.get_language()
                         try:
-                            self._send_msg = "*** " + (self._messages["newmsg"], self._messages["answer"])[is_reply][self.lang].format(app, self.user_from) + self._send_msg
+                            send_msg_final = "*** " + (self._messages["newmsg"], self._messages["answer"])[is_reply][user_to_lg.lang].format(app, self.user_from) + self._send_msg
                             return_id = Mastodon(access_token=self._xmpp_bridge_token, api_base_url=self._ap_instance, user_agent=self._user_agent).status_post(
-                                self._send_msg, in_reply_to_id = self.reply_id, visibility = "direct", quote_approval_policy = "nobody", language = self.lang).id
+                                send_msg_final, in_reply_to_id = self.reply_id, visibility = "direct", quote_approval_policy = "nobody", language = self.lang).id
                         except MastodonError as e:
                             LogError(self._log_file, ">> Error in posting status from XMPP Bridge", e).log()
                         finally: # Finish by populating database with communication ID's
